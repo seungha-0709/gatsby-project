@@ -22,7 +22,7 @@ what's here to work the way you'd like it to.
 :root {
 
     /* Colours */
-    --color-primary: #3eb0ef;
+    --color-primary: #0079bb;
     --color-base: #15171A;
     --color-secondary: #5B7A81;
     --color-border: #c7d5d8;
@@ -301,7 +301,7 @@ th {
 html {
     overflow-x: hidden;
     overflow-y: scroll;
-    font-size: 62.5%;
+    font-size: 16px;
     background: var(--color-base);
 
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -662,98 +662,35 @@ h6 {
 /* ---------------------------------------------------------- */
 
 .site-head {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #fff;
-    background: var(--color-base);
-    background-position: center;
-    background-size: cover;
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background: rgba(247, 251, 255, 0.9);
+  position: fixed;
 }
 
-.site-nav-item {
-    display: inline-block;
-    padding: 5px 10px;
-    color: #fff;
-    opacity: 0.7;
-}
-
-.site-nav-item:hover {
-    text-decoration: none;
-    opacity: 1;
-}
-
-.site-nav-icon {
-    height: 15px;
-    margin: -5px 0 0;
-}
-
-.site-logo {
-    height: 25px;
-}
-
-.site-mast {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.site-mast-right {
-    display: flex;
-    align-items: center;
-}
-
-.site-mast-right .site-nav-item:last-child {
-    padding-right: 0;
-}
-
-.site-banner {
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 10vw 0;
-    text-align: center;
-}
-
-.site-banner-title {
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    font-size: 4rem;
-    line-height: 1.3em;
-}
-
-.site-banner-desc {
-    margin: 5px 0 0 0;
-    padding: 0;
-    font-size: 2.4rem;
-    line-height: 1.3em;
-    opacity: 0.7;
-}
-
-.site-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 15px 0 0 0;
-}
-
-.site-nav-left {
-    margin: 0 20px 0 -10px;
-}
-
-.site-nav-button {
-    display: inline-block;
-    padding: 5px 10px;
-    border: #fff 1px solid;
-    color: #fff;
-    font-size: 1.3rem;
-    line-height: 1em;
-    border-radius: var(--radius);
-    opacity: 0.7;
-}
-
-.site-nav-button:hover {
-    text-decoration: none;
-}
+/* lnb */
+.lnb-bg {
+    background-color: #0079bb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 30%;
+    height: 100vh; }
+    .lnb-bg .lnb-nav {
+      width: 300px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-color: #248bc2; }
+  
 
 /* Main
 /* ---------------------------------------------------------- */
@@ -766,97 +703,169 @@ h6 {
 /* ---------------------------------------------------------- */
 
 .post-feed {
-    display: grid;
-    justify-content: space-between;
-    grid-gap: 30px;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
 }
+.post-feed a {
+    text-decoration: none;
+}
+.post-card {
+    display: block;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    margin: 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    overflow: hidden;
+    justify-content: space-between;
+    background-color: #e3e9f0;
+  }
+  .post-card:hover {
+    background: #7cb3d1;
+  }
+  .post-card:nth-child(even) {
+    width: 600px;
+    background-color: rgb(218, 232, 247);
+  }
+  .post-card:nth-child(1):hover {
+    background: rgb(189, 210, 223);
+  }
+  .post-card:nth-child(1) {
+    width: 600px;
+    background-color: #fff;
+  }
+  .post-card:nth-child(2):hover {
+    background: rgb(66, 157, 231);
+  }
+  .post-card:nth-child(2) {
+    width: 300px;
+    background-color: #eee;
+  }
+  .post-card:nth-child(3):hover {
+    background: #b4def5;
+  }
+  .post-card:nth-child(3) {
+    width: 300px;
+    background: #b1c6d8;
+  }
+  .post-card:nth-child(4):hover {
+    background: #65a4c9;
+  }
+  .post-card:nth-child(4) {
+    width: 300px;
+    background-color: #ddd;
+  }
+  .post-card:nth-child(5):hover {
+    background:#579ada
+  }
+  .post-card:nth-child(5) {
+    width: 600px;
+    background: #d8e8f9;
+  }
+  .post-card:nth-child(6):hover {
+    background: rgb(191, 201, 218);
+  }
+  .post-card:nth-child(6) {
+    width: 300px;
+    background-color: #eceff1;
+  }
+  .post-card:nth-child(7):hover {
+    background: #4eb1e6;
+  }
+  .post-card:nth-child(7) {
+    width: 300px;
+    background-color: #ffffff;
+  }
+  .post-card:nth-child(8):hover {
+    background: rgb(152, 169, 185);
+  }
+  .post-card:nth-child(8) {
+    width: 300px;
+    background-color: rgb(192, 220, 233);
+  }
+  .post-card:nth-child(9):hover {
+    background-color: rgb(54, 133, 197);
+  }
+  .post-card:nth-child(9) {
+    width: 600px;
+    background: rgb(147, 193, 231);
+  }
+  
+  .post-card-tags {
+    display: block;
+    width: 100%;
+    font-size: 0.8rem;
+    color: #0079bb;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+  }
+  .post-card-title {
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .post-card-excerpt {
+      display: block;
+      width: 100%;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: #24292e;
+      font-weight: 400;
+      margin-top: 5px;
+      margin-bottom: 5px;
+  }
+  .post-card-footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 0.8rem;
+    color: var(--color-secondary)
+  }
+
 
 @media (max-width: 980px) {
     .post-feed {
-        grid-template-columns: 1fr 1fr;
+      display: flex;
+      width: 100%;
+    }
+    .post-card:nth-child(1),
+    .post-card:nth-child(2),
+    .post-card:nth-child(3),
+    .post-card:nth-child(4),
+    .post-card:nth-child(5),
+    .post-card:nth-child(6),
+    .post-card:nth-child(7),
+    .post-card:nth-child(8),
+    .post-card:nth-child(9) {
+        width: 300px;
     }
 }
 @media (max-width: 680px) {
     .post-feed {
-        grid-template-columns: 1fr;
+        display: block;
+        width: 100%;
+    }
+    .post-card:nth-child(1),
+    .post-card:nth-child(2),
+    .post-card:nth-child(3),
+    .post-card:nth-child(4),
+    .post-card:nth-child(5),
+    .post-card:nth-child(6),
+    .post-card:nth-child(7),
+    .post-card:nth-child(8),
+    .post-card:nth-child(9) {
+        display: block;
+        width: 100%;
     }
 }
 
-.post-card {
-    color: inherit;
-    text-decoration: none;
-}
-
-.post-card:hover {
-    text-decoration: none;
-}
-
-.post-card-tags {
-    margin: 0 0 5px 0;
-    font-size: 1.4rem;
-    line-height: 1.15em;
-    color: var(--color-secondary);
-}
-
-
-.post-card-title {
-    margin: 0 0 10px 0;
-    padding: 0;
-}
-
-.post-card-excerpt {
-    font-size: 1.6rem;
-    line-height: 1.55em;
-}
-
-.post-card-image {
-    margin: 0 0 10px 0;
-    width: auto;
-    height: 200px;
-    background: var(--color-secondary) no-repeat center center;
-    background-size: cover;
-}
-
-.post-card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px 0 0 0;
-    color: var(--color-secondary);
-}
-
-.post-card-footer-left {
-    display: flex;
-    align-items: center;
-}
-
-.post-card-footer-right {
-    display: flex;
-    flex-direction: column;
-}
-
-.post-card-avatar {
-    width: 30px;
-    height: 30px;
-    margin: 0 7px 0 0;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.post-card-avatar .author-profile-image {
-    display: block;
-    width: 100%;
-    background: var(--color-secondary);
-    border-radius: 100%;
-    object-fit: cover;
-}
-
-.post-card-avatar .default-avatar {
-    width: 26px;
-}
 
 
 /* Tag Archives
@@ -1160,3 +1169,37 @@ h6 {
   .kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
     margin: -2.25em 0 3em;
   }
+
+
+
+
+
+  /* toggle button */
+.toggle-button {
+    font-size: 15px;
+    color: #fff !important;
+    display: inline-block;
+    margin: 4.3px 2px; }
+    .toggle-button .toggle-bg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 42px;
+      height: 22px;
+      cursor: pointer;
+      position: relative;
+      background-color: #212121;
+      border-radius: 20px; }
+      .toggle-button .toggle-bg .click {
+        background-color: #fff;
+        display: block;
+        width: 18px;
+        height: 18px;
+        border-radius: 9px;
+        position: absolute;
+        left: 2px;
+        bottom: 2px;
+        transition: all 0.4s ease; }
+      .toggle-button .toggle-bg .click.dark {
+        transform: translateX(20px); }
+

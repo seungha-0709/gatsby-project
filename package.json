@@ -34,12 +34,15 @@
     "babel-eslint": "10.1.0",
     "eslint": "7.24.0",
     "eslint-plugin-ghost": "2.0.0",
-    "eslint-plugin-react": "7.23.2"
+    "eslint-plugin-react": "7.23.2",
+    "lint-staged": "^10.5.4"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "@tryghost/helpers": "1.1.41",
     "@tryghost/helpers-gatsby": "1.0.47",
     "cheerio": "1.0.0-rc.5",
+    "classnames": "^2.3.1",
     "gatsby": "2.32.12",
     "gatsby-awesome-pagination": "0.3.6",
     "gatsby-image": "2.11.0",
@@ -52,11 +55,14 @@
     "gatsby-plugin-react-helmet": "3.10.0",
     "gatsby-plugin-sharp": "2.14.3",
     "gatsby-source-filesystem": "2.11.1",
-    "gatsby-source-ghost": "4.2.3",
+    "gatsby-source-ghost": "^4.2.3",
     "gatsby-transformer-sharp": "2.12.1",
+    "install": "^0.13.0",
     "lodash": "4.17.21",
+    "npm": "^7.11.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-helmet": "6.1.0"
+    "react-helmet": "6.1.0",
+    "react-icons": "^4.2.0"
   }
 }

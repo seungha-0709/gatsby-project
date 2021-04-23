@@ -1,7 +1,7 @@
 {
   "development": {
-    "apiUrl": "https://gatsby.ghost.io",
-    "contentApiKey": "9cc5c67c358edfdd81455149d0"
+    "apiUrl": "https://kimseungha.dev",
+    "contentApiKey": "e9d4e41d01ddfe5b58ac84457d"
   },
   "production": {
     "apiUrl": "https://gatsby.ghost.io",
