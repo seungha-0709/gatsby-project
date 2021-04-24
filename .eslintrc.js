@@ -29,15 +29,15 @@ module.exports = {
         "no-inner-declarations": "off",
         "valid-jsdoc": "off",
         "require-jsdoc": "off",
-        "quotes": ["error", "backtick"],
+        "quotes": ["double"],
         "consistent-return": ["error"],
         "arrow-body-style": [
             "error",
             "as-needed",
             { "requireReturnForObjectLiteral": true }
         ],
-        "jsx-quotes": ["error", "prefer-double"],
-        "semi": ["error", "never"],
+        "jsx-quotes": ["error", "prefer-single"],
+        "semi": ["always"],
         "object-curly-spacing": ["error", "always"],
         "comma-dangle": [
             "error",

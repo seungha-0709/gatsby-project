@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Spoqa Han Sans';
+  font-weight: 700;
+  font-display: block;
+  src: local('Spoqa Han Sans Bold'),
+  url('/fonts/spoqahansansbold.woff2') format('woff2'),
+  url('/fonts/spoqahansansbold.woff') format('woff'),
+  url('/fonts/spoqahansansbold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans';
+  font-weight: 400;
+  font-display: block;
+  src: local('Spoqa Han Sans Regular'),
+  url('/fonts/spoqahansansregular.woff2') format('woff2'),
+  url('/fonts/spoqahansansregular.woff') format('woff'),
+  url('/fonts/spoqahansansregular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans';
+  font-weight: 300;
+  font-display: block;
+  src: local('Spoqa Han Sans Light'),
+  url('/fonts/spoqahansanslight.woff2') format('woff2'),
+  url('/fonts/spoqahansanslight.woff') format('woff'),
+  url('/fonts/spoqahansanslight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans';
+  font-weight: 100;
+  font-display: block;
+  src: local('Spoqa Han Sans Thin'),
+  url('/fonts/spoqahansansthin.woff2') format('woff2'),
+  url('/fonts/spoqahansansthin.woff') format('woff'),
+  url('/fonts/spoqahansansthin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Monaco';
+  font-style: normal;
+  font-weight: normal;
+  font-display: block;
+  src: url('/fonts/monaco.ttf');
+}

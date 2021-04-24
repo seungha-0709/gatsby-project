@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
+import classNames from 'classnames'
+import { GiHamburgerMenu } from "react-icons/Gi"
+import { HiOutlineSun } from 'react-icons/Hi'
+import { RiMoonFill } from 'react-icons/Ri'
+import { GrPrevious } from 'react-icons/Gr'
+import { IoIosArrowBack } from 'react-icons/Io'
 import Img from 'gatsby-image'
 import Toggle from './Toggle'
 import Lnb from './Lnb'
@@ -25,6 +31,18 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
 
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const [toggleShift, setToggleShift] = useState(false)
+
+    const handleToggleClick = () => {
+        setToggleShift(!toggleShift)
+    }
+
+    const handleMenuOpen = () => {
+        setIsMenuOpen(!isMenuOpen)
+    }
+
     return (
         <>
             <Helmet>
@@ -36,37 +54,58 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             <div className="viewport">
 
                 <div className="viewport-top">
+                    {/* {isHome && } */}
                     {/* The main header section on top of the screen */}
-                    <header className="site-head">
-                        <Toggle />
-                        {/* {isHome && } */}
-
-                    </header>
-                    <aside>
-                        <Lnb />
-                    </aside>
-                    <main className="site-main">
-                        {/* All the main content gets inserted here, index.js, post.js */}
-                        {children}
-                    </main>
-
-                </div>
-
-                <div className="viewport-bottom">
-                    {/* The footer at the very bottom of the screen */}
-                    <footer className="site-foot">
-                        <div className="site-foot-nav container">
-                            <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2021 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                    <div className="layout-wrap" style={{ display: 'flex' }}>
+                        <aside className="lnb-wrap" style={{ width: '25%' }}>
+                            <div className='lnb-bg'></div>
+                            <div className={classNames('lnb-nav', isMenuOpen ? 'open' : '')}>
+                                <span style={{ display: 'block' }}><IoIosArrowBack onClick={handleMenuOpen} style={{ color: '#fff', fontSize: '20px' }} /></span>
+                                <Navigation data={site.navigation} navClass="site-lnb-nav-item" />
                             </div>
-                            <div className="site-foot-nav-right">
-                                <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+                        </aside>
+                        <div className="content-wrap" style={{ width: '75%' }}>
+                            <header className="site-head">
+                                <div style={{ display: 'flex' }}>
+                                    <span className="toggle-circle">
+                                        <GiHamburgerMenu style={{ fontSize: '20px' }} onClick={handleMenuOpen} /></span>
+                                    <div className="toggle-button">
+                                        <div className="toggle-bg">
+                                            <div
+                                                className={classNames('click', toggleShift ? 'dark' : '')}
+                                                onClick={handleToggleClick}
+                                            ></div>
+                                            <RiMoonFill style={{ color: '#fff', fontSize: '16px' }} />
+                                            <HiOutlineSun style={{ color: '#fff', fontSize: '16px' }} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+                            <main className="site-main">
+                                {/* All the main content gets inserted here, index.js, post.js */}
+                                {children}
+                            </main>
+                            <div className="viewport-bottom">
+                                {/* The footer at the very bottom of the screen */}
+                                <footer className="site-foot">
+                                    <div className="site-foot-nav container">
+                                        <div className="site-foot-nav-left">
+                                            <Link to="/">{site.title}</Link> © 2021 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                                        </div>
+                                        <div className="site-foot-nav-right">
+                                            <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+                                        </div>
+                                    </div>
+                                </footer>
+
                             </div>
                         </div>
-                    </footer>
+
+                    </div>
+
 
                 </div>
-            </div>
+            </div >
 
         </>
     )

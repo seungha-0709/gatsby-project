@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import classNames from 'classnames'
+import Navigation from './Navigation'
 
 const Lnb = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+
   return (
     <div className='lnb-bg'>
-      <div className='lnb-nav'>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-        </ul>
+      <div className={classNames('lnb-nav', isMenuOpen ? 'open' : '')}>
+        <Navigation />
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
@@ -15,6 +15,24 @@ import { MetaData } from '../components/common/meta'
 const Post = ({ data, location }) => {
     const post = data.ghostPost
 
+    const postEl = useRef(null)
+    const indexBoxEl = useRef(null)
+    console.log(postEl)
+
+    useEffect(() => {
+        let toc = '';
+        const headings = postEl.current.querySelectorAll('h1, h2, h3, h4, h5, h6')
+        console.log(headings)
+        headings.forEach((heading) => {
+            let title = heading.innerHTML
+            let tagName = heading.tagName
+            let href = encodeURI(`${tagName}-${title}`)
+            heading.id = href
+            toc += `<li class="${tagName}" key="${tagName}"><a href="#${href}">${title}</a></li>`;
+        })
+        indexBoxEl.current.innerHTML = `<ul>${toc}</ul>`;
+    })
+
     return (
         <>
             <MetaData
@@ -26,23 +44,69 @@ const Post = ({ data, location }) => {
                 <style type="text/css">{`${post.codeinjection_styles}`}</style>
             </Helmet>
             <Layout>
-                <div className="container">
-                    <article className="content">
-                        { post.feature_image ?
-                            <figure className="post-feature-image">
-                                <img src={ post.feature_image } alt={ post.title } />
-                            </figure> : null }
-                        <section className="post-full-content">
-                            <h1 className="content-title">{post.title}</h1>
+                <article className="post-container">
+                    <div className="post-wrapper">
+                        <header className="post-header">
+                            {post.tags && post.tags.map((tag, i) => { return <span key={i} className="post-tags-title">{tag.name}</span> })}
+                            <h1 className="post-title">{post.title}</h1>
 
-                            {/* The main post content */ }
+                            <p className="post-date">written by
+                                <strong>{post.authors.map(v => { return v.name })}</strong>
+                            </p>
+                        </header>
+
+                        <div className="post-content" ref={postEl}>
+                            {post.feature_image && <img className="post-featured-image" src={post.feature_image} alt={post.title} />}
+                            {/* The main post content */}
                             <section
                                 className="content-body load-external-scripts"
-                                dangerouslySetInnerHTML={{ __html: post.html }}
-                            />
-                        </section>
-                    </article>
+                                dangerouslySetInnerHTML={{ __html: post.html }}>
+                            </section>
+                        </div>
+
+                        <footer className="post-footer clearfix">
+                            {post.tags && 'Tag: ' + post.tags.map((tag, i) => {
+                                return tag.name
+                            })}
+                            <div>
+                                <script src="https://utteranc.es/client.js"
+                                    repo="seungha-0709/blog-comments"
+                                    issue-term="pathname"
+                                    theme="github-light"
+                                    crossOrigin="anonymous"
+                                    async>
+                                </script>
+                            </div>
+                            <div className="prev-next-wrap">
+
+                                {/* {{#prev_post}}
+		        <a href="{{url}}">
+                <div className="prev-next">
+                  <span className="prev-next-tag">prev post</span>
+                  <p className="prev-next-title">{{title}}</p>
+                  <p className="prev-next-excerpt">{{excerpt words="20"}}<span>...</span></p>
                 </div>
+                </a>
+                
+	        {{/prev_post}}
+
+	        {{#next_post}}
+		        <a href="{{url}}">
+                <div className="prev-next">
+                    <span className="prev-next-tag">next post</span>
+                    <p className="prev-next-title">{{title}}</p>
+                    <p className="prev-next-excerpt">{{excerpt words="15"}}</p>
+                </div>
+                </a>
+	        {{/next_post}} */}
+                            </div>
+                        </footer>
+                    </div>
+                    <div className="index-box-wrapper">
+                        <div className="index-box" ref={indexBoxEl}>
+                        </div>
+                    </div>
+                </article>
             </Layout>
         </>
     )
