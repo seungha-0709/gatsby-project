@@ -50,7 +50,7 @@ const Post = ({ data, location }) => {
                             {post.tags && post.tags.map((tag, i) => { return <span key={i} className="post-tags-title">{tag.name}</span> })}
                             <h1 className="post-title">{post.title}</h1>
 
-                            <p className="post-date">written by
+                            <p className="post-date"><span>written by </span>
                                 <strong>{post.authors.map(v => { return v.name })}</strong>
                             </p>
                         </header>

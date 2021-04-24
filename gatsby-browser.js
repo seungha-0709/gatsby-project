@@ -9,6 +9,9 @@
  * via ids/classnames etc.
  *
  */
+const React = require("react")
+const { RecoilRoot } = require("recoil")
+
 var trustAllScripts = function () {
     var scriptNodes = document.querySelectorAll('.load-external-scripts script');
 
@@ -30,3 +33,6 @@ var trustAllScripts = function () {
 exports.onRouteUpdate = function () {
     trustAllScripts();
 };
+exports.wrapPageElement = ({ element, props }) => {
+    return <RecoilRoot {...props}>{element}</RecoilRoot>
+}
