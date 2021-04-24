@@ -721,12 +721,17 @@ h6 {
     transform: translateX(180%);
 }
 
+.site-lnb-nav {
+    margin-top: 20px;
+    width: 100%;
+}
 .site-lnb-nav-item {
     display: block;
     color: #fff;
     width: 100%;
     text-align: right;
     font-size: 1rem;
+    margin-bottom: 10px;
 }
 
 .site-lnb-nav a:hover {
@@ -1254,36 +1259,26 @@ h6 {
 
 .site-foot {
     padding: 20px 0 40px 0;
-    color: rgba(255,255,255,0.7);
-    font-size: 1.3rem;
-    background: var(--color-base);
+    color: var(--color-base);
+    font-size: 0.9rem;
+    background: var(--color-bg);
 }
-
 .site-foot-nav {
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
-
 .site-foot-nav a {
     display: block;
-    color: #fff;
+    margin-bottom: 10px;
+    color: var(--color-base);
 }
-
 .site-foot-nav a:hover {
     text-decoration: none;
     color: rgba(255,255,255,1);
 }
-
-.site-foot-nav-right a {
-    display: inline-block;
-    padding: 2px 5px;
+.site-foot-nav-left {
+    width: 100%;
 }
-
-.site-foot-nav-right a:last-child {
-    padding-right: 0;
-}
-
 
 
 
@@ -1434,23 +1429,158 @@ h6 {
     margin: -2.25em 0 3em;
   }
 
+/* *********************** */
+/* dark mode */
+/* *********************** */
+.darkmode {
+    background: #212121;
+    color: #ffffff
+  }
+  .darkmode .site-foot {
+    background: #212121;
+  }
+  .darkmode .post-stub-date,
+  .darkmode .post-stub-date a {
+    color: #24292e;
+  }
+  .darkmode .menu-wrapper .menu a,
+  .darkmode .index-box-wrapper .menu a,
+  .darkmode .post-menu a,
+  .darkmode .index-box a,
+  .darkmode .post-date,
+  .darkmode .post-date a,
+  .darkmode .post-card-link,
+  .darkmode .post-card-title,
+  .darkmode .post-card-date,
+  .darkmode .post-card .post-card-excerpt,
+  .darkmode .footer-copyright,
+  .darkmode .prev-next-wrap a,
+  .darkmode .footer-copyright a,
+  .darkmode .index-box-wrapper a,
+  .darkmode .site-foot-nav,
+  .darkmode .site-foot-nav-item,
+  .darkmode .site-foot-nav-left {
+    color: #ffffff;
+  }
+  .darkmode menu-wrapper .menu a:hover,
+  .darkmode .index-box-wrapper .menu a:hover
+  .darkmode .post-menu a:hover,
+  .darkmode .post-date a:hover,
+  .darkmode .footer-copyright a:hover,
+  .darkmode .index-box-wrapper a:hover {
+    color: rgba(255, 255, 255, 0.2)
+  }
+  .darkmode p {
+    color: #ffffff;
+  }
+  .darkmode
+  .darkmode figcaption {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .darkmode blockquote {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px sold rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+  }
+  .darkmode .post-tags-title a, 
+  .darkmode .post-tags a,
+  .darkmode .tags-title,
+  .darkmode .tags-title a {
+    color: #4bace0;
+  }
+  .darkmode .kg-bookmark-container {
+    background: #eee;
+  }
+  .darkmode .darkbulb {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  .darkmode .mode-gnb {
+    background: #212121;
+    opacity: 0.8;
+  }
+  .darkmode .fa,
+  .darkmode .fab,
+  .darkmode .fad,
+  .darkmode .fal,
+  .darkmode .far,
+  .darkmode .fas {
+    color: rgba(255, 255, 255, 0.5)
+  }
+  .darkmode .post-card:nth-child(1):hover {
+    background: rgb(189, 210, 223, 0.2);
+  }
+  .darkmode .post-card:nth-child(1) {
+    background-color: #111;
+  }
+  .darkmode .post-card:nth-child(2):hover {
+    background: rgb(66, 157, 231, 0.2);
+  }
+  .darkmode .post-card:nth-child(2) {
+    background-color: rgb(26, 35, 49);
+  }
+  .darkmode .post-card:nth-child(3):hover {
+    background: #13384d;
+  }
+  .darkmode .post-card:nth-child(3) {
+    background: #292f35;
+  }
+  .darkmode .post-card:nth-child(4):hover {
+    background: #004770;
+  }
+  .darkmode .post-card:nth-child(4) {
+    background-color: rgb(48, 41, 41);
+  }
+  .darkmode .post-card:nth-child(5):hover {
+    background:#34608a
+  }
+  .darkmode .post-card:nth-child(5) {
+    background: #404b57;
+  }
+  .darkmode .post-card:nth-child(6):hover {
+    background: rgb(191, 201, 218, 0.2);
+  }
+  .darkmode .post-card:nth-child(6) {
+    background-color: #0b2536;
+  }
+  .darkmode .post-card:nth-child(7):hover {
+    background: #0f4563;
+  }
+  .darkmode .post-card:nth-child(7) {
+    background-color: rgb(8, 8, 8);
+  }
+  .darkmode .post-card:nth-child(8):hover {
+    background: rgb(152, 169, 185, 0.2);
+  }
+  .darkmode .post-card:nth-child(8) {
+    background-color: rgb(192, 220, 233, 0.2);
+  }
+  .darkmode .post-card:nth-child(9):hover {
+    background-color: rgb(54, 133, 197,0.2);
+  }
+  .darkmode .post-card:nth-child(9) {
+    background: rgb(147, 193, 231, 0.2);
+  }
+  
+
+
 
 
 
 
   /* toggle button */
-.toggle-circle {
+.btn-circle {
     display: inline-block;
     width: 30px;
     height: 30px;
     border-radius: 15px;
-    background: #0079bb;
+    background:#212121;
     display:  flex;
     justify-content: center;
     align-items: center;
     margin-right: 10px;
     cursor: pointer;
 }
+
 .toggle-button {
     font-size: 15px;
     color: #fff !important;
