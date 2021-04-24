@@ -49,7 +49,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
         setIsMenuOpen(!isMenuOpen)
     }
 
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+    const [windowWidth, setWindowWidth] = useState(null)
     const handleResize = () => {
         setWindowWidth(window.innerWidth)
     }
