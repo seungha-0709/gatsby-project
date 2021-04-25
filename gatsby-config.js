@@ -190,8 +190,8 @@ module.exports = {
         {
             resolve: `gatsby-source-ghost`,
             options: {
-                apiUrl: `https://kimseungha.dev`,
-                contentApiKey: `e9d4e41d01ddfe5b58ac84457d`,
+                apiUrl: `https://mydevlog-sh.gq`,
+                contentApiKey: `3f1683060558ffc7cd38c32afa`,
                 version: `v3` // Ghost API version, optional, defaults to "v3".
                 // Pass in "v2" if your Ghost install is not on 3.0 yet!!!
             }

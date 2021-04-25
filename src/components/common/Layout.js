@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
@@ -8,10 +8,8 @@ import { HiOutlineSun } from 'react-icons/hi'
 import { RiMoonFill } from 'react-icons/ri'
 import { IoIosArrowBack } from 'react-icons/io'
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
-import { isDarkShift } from '../../store/dark'
-import Img from 'gatsby-image'
-import Toggle from './Toggle'
-import Lnb from './Lnb'
+import { isDarkShift, isToggle } from '../../store/dark'
+
 
 import { Navigation } from '.'
 import config from '../../utils/siteConfig'
@@ -34,20 +32,19 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
 
-    console.log(isDarkShift)
-    const [darkToggle, setDarkToggle] = useRecoilState(isDarkShift)
+    const [isDark, setIsDark] = useRecoilState(isDarkShift)
+    const [isToggleDark, setIsToggleDark] = useRecoilState(isToggle)
+
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [toggleShift, setToggleShift] = useState(false)
 
-    console.log(darkToggle)
     const handleToggleClick = () => {
-        setToggleShift(!toggleShift)
-        setDarkToggle(!darkToggle)
+        setIsToggleDark(!isToggleDark)
+        setIsDark(!isDark)
     }
 
-    const handleMenuOpen = () => {
+    const handleMenuOpen = useCallback(() => {
         setIsMenuOpen(!isMenuOpen)
-    }
+    }, [isMenuOpen])
 
     const [windowWidth, setWindowWidth] = useState(null)
     const handleResize = () => {
@@ -55,6 +52,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     }
 
     useEffect(() => {
+        setWindowWidth(window.innerWidth)
         window.addEventListener('resize', handleResize);
         return () => { // cleanup 
             window.removeEventListener('resize', handleResize);
@@ -65,27 +63,20 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const lnbNav = useRef(null)
 
     useEffect(() => {
+        // lnbNav.current.style.left = '-50%'
         if (windowWidth < 400) {
-            lnbNav.current.style.width = '150px'
-            lnbNav.current.style.left = '-80%'
+            lnbNav.current.style.width = '100px'
+            lnbNav.current.style.left = '-100px'
             if (isMenuOpen) {
-                lnbNav.current.style.transform = 'translateX(140%)'
+                lnbNav.current.style.width = windowWidth / 1.2 + 'px'
             } else {
-                lnbNav.current.style.transform = 'translateX(0%)'
-            }
-        } else if (windowWidth < 900) {
-            if (isMenuOpen) {
-                const lnbBoxWidth = lnbBox.current.offsetWidth
-                lnbNav.current.style.width = (lnbBoxWidth * 2.5) + 'px'
-                lnbNav.current.style.left = '0px'
-            } else {
-                lnbNav.current.style.width = '0px'
+                lnbNav.current.style.width = '100px'
             }
         } else {
+            lnbNav.current.style.left = '-10%'
+            lnbNav.current.style.width = '0px'
             if (isMenuOpen) {
-                const lnbBoxWidth = lnbBox.current.offsetWidth
-                lnbNav.current.style.width = (lnbBoxWidth * 1.5) + 'px'
-                lnbNav.current.style.left = '0px'
+                lnbNav.current.style.width = windowWidth / 2 + 'px'
             } else {
                 lnbNav.current.style.width = '0px'
             }
@@ -100,7 +91,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <body className={bodyClass} />
             </Helmet>
 
-            <div className={classNames('viewport', darkToggle ? 'darkmode' : '')}>
+            <div className={classNames('viewport', isDark ? 'darkmode' : '')}>
 
                 <div className="viewport-top">
                     {/* {isHome && } */}
@@ -121,7 +112,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     <div className="toggle-button">
                                         <div className="toggle-bg">
                                             <div
-                                                className={classNames('click', toggleShift ? 'dark' : '')}
+                                                className={classNames('click', isToggleDark ? 'dark' : '')}
                                                 onClick={handleToggleClick}
                                             ></div>
                                             <RiMoonFill style={{ color: '#fff', fontSize: '16px' }} />
