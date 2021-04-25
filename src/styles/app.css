@@ -423,7 +423,7 @@ dd {
 blockquote {
     margin: 0.3em 0 1.8em;
     padding: 0 1.6em 0 1.6em;
-    border-left: #cbeafb 0.5em solid;
+    border-left: #a0b4c0 0.5em solid;
 }
 
 blockquote p {
@@ -529,6 +529,18 @@ pre code {
     font-size: 0.9rem !important;
     margin: 40px 0;
 }
+
+code {
+    background: #f0f2f5;
+    color: #ce0041;
+    padding: 2px 4px;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+  code a {
+    color: #ce0041;
+  }
 
 /* Layout
 /* ---------------------------------------------------------- */
@@ -775,7 +787,7 @@ pre code {
     width: 100%;
     font-weight: 600;
     font-size: 1.2rem;
-    margin: 0;
+    margin: 10px 0 0 0;
     line-height: 1.2;
   }
   .post-card-excerpt {
@@ -1360,7 +1372,6 @@ pre code {
   .darkmode blockquote {
     background: rgba(255, 255, 255, 0.1);
     border: 1px sold rgba(255, 255, 255, 0.5);
-    border-radius: 4px;
   }
   .darkmode .post-tags-title a, 
   .darkmode .post-tags a,
@@ -1377,14 +1388,6 @@ pre code {
   .darkmode .mode-gnb {
     background: #212121;
     opacity: 0.8;
-  }
-  .darkmode .fa,
-  .darkmode .fab,
-  .darkmode .fad,
-  .darkmode .fal,
-  .darkmode .far,
-  .darkmode .fas {
-    color: rgba(255, 255, 255, 0.5)
   }
   .darkmode .post-card:nth-child(1):hover {
     background: rgb(189, 210, 223, 0.2);
@@ -1439,6 +1442,12 @@ pre code {
   }
   .darkmode .post-card:nth-child(9) {
     background: rgb(147, 193, 231, 0.2);
+  }
+  .darkmode .lnb-bg {
+      background: #002e49
+  }
+  .darkmode .lnb-nav {
+      background: #004770;
   }
   
 
