@@ -2,12 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
-import { readingTime as readingTimeHelper } from '@tryghost/helpers'
+import moment from 'moment';
 
 const PostCard = ({ post }) => {
-    console.log(post)
     const url = `/${post.slug}/`
-    const readingTime = readingTimeHelper(post)
 
     return (
         <Link to={url} className="post-card">
@@ -21,7 +19,7 @@ const PostCard = ({ post }) => {
                 <div className="post-card-footer-left">
                 </div>
                 <div className="post-card-footer-right">
-                    <div>{readingTime}</div>
+                    <div>{moment(post.published_at).format('MMMM Do YYYY')}</div>
                 </div>
             </footer>
         </Link>

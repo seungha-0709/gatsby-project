@@ -220,7 +220,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: monospace, monospace;
+    font-family: "Monaco", monospace;
     font-size: 0.9rem;
 }
 button,
@@ -297,13 +297,14 @@ th {
     padding: 0;
 }
 
+
 /* Defaults
 /* ---------------------------------------------------------- */
 
 html {
     overflow-x: hidden;
     overflow-y: scroll;
-    font-size: 18px;
+    font-size: 16px;
     background: var(--color-bg);
     font-size: 1rem;
     font-family: var(--font-sans-serif);
@@ -519,6 +520,14 @@ h6 {
     margin: 1.5em 0 0.5em 0;
     font-size: 1.4rem;
     font-weight: 500;
+}
+
+pre code {
+    padding: 20px !important;
+    border-radius: 4px;
+    line-height: 1.6;
+    font-size: 0.9rem !important;
+    margin: 40px 0;
 }
 
 /* Layout
@@ -819,7 +828,6 @@ h6 {
     .post-card:nth-child(7),
     .post-card:nth-child(8),
     .post-card:nth-child(9) {
-        display: block;
         width: 100%;
     }
 }
@@ -838,48 +846,7 @@ h6 {
     width: 900px;
     margin-top: 50px;
   }
-  .index-box-wrapper {
-    width: 300px;
-  }
-  .index-box {
-    width: 300px;
-    position: fixed;
-    top: 200px;
-    border: 1px solid #e1e4e8;
-    border-radius: 4px;
-  }
-  .index-box a {
-    color: var(--color-base);
-  }
-  .index-box a:hover {
-    color: #888;
-    font-weight: 600;
-  }
-  .index-box ul {
-    list-style: none;
-    padding: 20px;
-    margin: 0px;
-  }
-  .index-box li {
-    margin: 15px;
-    line-height: 1.4;
-    
-  }
-  .index-box .H1 a {
-    font-size: 1rem;
-    font-weight: 700;
-    font-weight: 400;
-  }
-  .index-box .H2 a {
-    font-size: 0.9rem;
-    font-weight: 400;
-    padding-left: 0px;
-  }
-  .index-box .H3 a {
-    font-size: 0.8rem;
-    font-weight: 400;
-    padding-left: 10px;
-  }
+
   .post-tags-title {
     font-size: 0.8rem;
     color: #888888;
@@ -1558,7 +1525,7 @@ h6 {
         justify-content: flex-start;
     }
     .post-wrapper {
-        width: 80%;
+        width: 70%;
         margin: 20px;
         padding: 20px;
     }
@@ -1582,7 +1549,15 @@ h6 {
     }
     .post-container {
         width: 100%;
-        padding: 20px;
+        padding: 40px;
+    }
+    .post-wrapper {
+        width: 100%;
+        margin: 60px 0 0 0;
+        padding: 0;
+    }
+    .content-body p, li, blockquote {
+        line-height: 1.8;
     }
     .index-box-wrapper {
         display: none;
@@ -1613,9 +1588,64 @@ h6 {
     .container {
         padding: 20px;
     }
+    .post-wrapper {
+        width: 100%;
+        padding: 0;
+        margin: 60px 0 0 0;
+    }
+    .post-title {
+        font-size: 2rem;
+    }
+    .content-body p, li, blockquote {
+        line-height: 1.6;
+        font-size: 0.9rem;
+    }
     .post-card:nth-child(odd),
     .post-card:nth-child(even) {
         width: 100%;
     }
-
 }
+
+.index-box-wrapper {
+    width: 300px;
+  }
+  .index-box {
+    width: 300px;
+    position: fixed;
+    top: 200px;
+    border-left: 1px solid #e1e4e8;
+    border-radius: 4px;
+  }
+  .index-box a {
+    color: var(--color-base);
+  }
+  .index-box a:hover {
+    color: #888;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .index-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+  }
+  .index-box li {
+    margin: 15px;
+    line-height: 1.4;
+    
+  }
+  .index-box .H1 strong {
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-weight: 400;
+  }
+  .index-box .H2 strong {
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding-left: 0px;
+  }
+  .index-box .H3 strong {
+    font-size: 0.7rem;
+    font-weight: 400;
+    padding-left: 10px;
+  }

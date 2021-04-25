@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import Utterances from '../components/Utterances'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -13,7 +14,10 @@ import { MetaData } from '../components/common/meta'
 *
 */
 const Post = ({ data, location }) => {
+
     const post = data.ghostPost
+
+    console.log(post)
 
     const postEl = useRef(null)
     const indexBoxEl = useRef(null)
@@ -69,13 +73,7 @@ const Post = ({ data, location }) => {
                                 return tag.name
                             })}
                             <div>
-                                <script src="https://utteranc.es/client.js"
-                                    repo="seungha-0709/blog-comments"
-                                    issue-term="pathname"
-                                    theme="github-light"
-                                    crossOrigin="anonymous"
-                                    async>
-                                </script>
+                                <Utterances repo='seungha-0709/blog-comments' theme='github-light' />
                             </div>
                             <div className="prev-next-wrap">
 

@@ -6,9 +6,12 @@ import classNames from 'classnames'
 import { GiConsoleController, GiHamburgerMenu } from "react-icons/gi"
 import { HiOutlineSun } from 'react-icons/hi'
 import { RiMoonFill } from 'react-icons/ri'
-import { IoIosArrowBack } from 'react-icons/io'
+import { FiChevronsLeft } from 'react-icons/fi'
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
 import { isDarkShift, isToggle } from '../../store/dark'
+import hljs from 'highlight.js';
+import 'highlight.js/styles/night-owl.css';
+
 
 
 import { Navigation } from '.'
@@ -16,6 +19,7 @@ import config from '../../utils/siteConfig'
 
 // Styles
 import '../../styles/app.css'
+import '../../styles/fonts.css'
 
 /**
 * Main layout component
@@ -25,7 +29,6 @@ import '../../styles/app.css'
 * styles, and meta data for each page.
 *
 */
-
 
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
@@ -63,7 +66,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const lnbNav = useRef(null)
 
     useEffect(() => {
-        // lnbNav.current.style.left = '-50%'
+        lnbNav.current.style.display = 'flex'
         if (windowWidth < 400) {
             lnbNav.current.style.width = '100px'
             lnbNav.current.style.left = '-100px'
@@ -83,6 +86,10 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
         }
     }, [isMenuOpen, windowWidth])
 
+    useEffect(() => {
+        hljs.highlightAll();
+    }, [])
+
     return (
         <>
             <Helmet>
@@ -100,8 +107,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         <aside className="lnb-wrap">
                             <div ref={lnbBox} className='lnb-bg'></div>
                         </aside>
-                        <div ref={lnbNav} className={classNames('lnb-nav')}>
-                            <span style={{ cursor: 'pointer' }}><IoIosArrowBack onClick={handleMenuOpen} style={{ color: '#fff', fontSize: '30px' }} /></span>
+                        <div ref={lnbNav} className={classNames('lnb-nav')} style={{ display: 'none' }}>
+                            <span style={{ cursor: 'pointer' }}><FiChevronsLeft onClick={handleMenuOpen} style={{ color: '#fff', fontSize: '30px' }} /></span>
                             <div className="site-lnb-nav"><Navigation data={site.navigation} navClass="site-lnb-nav-item" /></div>
                         </div>
                         <div className="content-wrap">
