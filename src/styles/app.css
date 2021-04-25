@@ -671,6 +671,12 @@ code {
     padding-right: 0;
 }
 
+.lnb-message {
+    font-size: 0.6rem;
+    color: #fff;
+    transform: rotate(270deg)
+}
+
 /* Main
 /* ---------------------------------------------------------- */
 
@@ -1595,6 +1601,9 @@ code {
         width: 100%;
     }
     .container {
+        padding: 20px;
+    }
+    .post-container {
         padding: 20px;
     }
     .post-wrapper {
