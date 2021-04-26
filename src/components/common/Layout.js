@@ -139,7 +139,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     <div className="site-foot-nav container">
                                         <div className="site-foot-nav-left">
                                             {/* <Link to="/">{site.title}</Link> */}
-                                             © 2021 Published with <br /> <a style={{ display: 'inline-block' }} className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>, Gatsby and Netlify
+                                             © 2021 <br /> Published with <br /> <a style={{ display: 'inline-block' }} className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer"> Ghost</a>, Gatsby and Netlify
                                             <span style={{ display: 'block' }}>Designed by Seungha</span>
                                         </div>
                                     </div>
