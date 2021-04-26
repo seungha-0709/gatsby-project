@@ -474,7 +474,7 @@ h6 {
 
 h1 {
     margin: 0 0 0.5em 0;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
 }
 @media (max-width: 500px) {
@@ -485,7 +485,7 @@ h1 {
 
 h2 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 @media (max-width: 500px) {
     h2 {
@@ -495,12 +495,12 @@ h2 {
 
 h3 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 1.8rem;
-    font-weight: 500;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     h3 {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -862,6 +862,7 @@ code {
   
   .post-wrapper {
     width: 900px;
+    padding: 40px;
     margin-top: 50px;
   }
 
@@ -1114,7 +1115,7 @@ code {
 .pagination {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin: 4vw 0 0;
 }
@@ -1122,12 +1123,10 @@ code {
 .pagination a {
     display: inline-block;
     padding: 10px 15px;
-    border: var(--color-border) 1px solid;
-    color: var(--color-secondary);
+    color: var(--color-base);
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 1rem;
     line-height: 1em;
-    border-radius: var(--radius);
 }
 
 .pagination-location {
@@ -1624,6 +1623,8 @@ code {
     }
 }
 
+/* index-box */
+
 .index-box-wrapper {
     width: 300px;
   }
@@ -1652,16 +1653,19 @@ code {
     line-height: 1.4;
     
   }
+  .index-box .H1 a,
   .index-box .H1 strong {
     font-size: 0.9rem;
     font-weight: 700;
     font-weight: 400;
   }
+  .index-box .H2 a,
   .index-box .H2 strong {
     font-size: 0.8rem;
     font-weight: 400;
     padding-left: 0px;
   }
+  .index-box .H3 a,
   .index-box .H3 strong {
     font-size: 0.7rem;
     font-weight: 400;
