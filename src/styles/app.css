@@ -24,7 +24,7 @@ what's here to work the way you'd like it to.
     /* Colours */
     --color-primary: #0079bb;
     --color-base: #15171A;
-    --color-secondary: #5B7A81;
+    --color-secondary: #6d747a;
     --color-border: #c7d5d8;
     --color-bg:#f7fbff;;
 
@@ -1633,7 +1633,6 @@ code {
     position: fixed;
     top: 200px;
     border-left: 1px solid #e1e4e8;
-    border-radius: 4px;
   }
   .index-box a {
     color: var(--color-base);

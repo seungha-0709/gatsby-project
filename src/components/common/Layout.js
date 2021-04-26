@@ -79,7 +79,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             lnbNav.current.style.left = '-10%'
             lnbNav.current.style.width = '0px'
             if (isMenuOpen) {
-                lnbNav.current.style.width = windowWidth / 2 + 'px'
+                lnbNav.current.style.width = windowWidth / 2.5 + 'px'
             } else {
                 lnbNav.current.style.width = '0px'
             }

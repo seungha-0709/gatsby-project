@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Utterances from '../components/Utterances'
+import moment from 'moment';
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -51,12 +52,13 @@ const Post = ({ data, location }) => {
                 <article className="post-container">
                     <div className="post-wrapper">
                         <header className="post-header">
-                            {post.tags && post.tags.map((tag, i) => { return <span key={i} className="post-tags-title">{tag.name}</span> })}
+                            {post.tags && post.tags.map((tag, i) => { return <span key={i} className="post-tags-title">{tag.name + '. '}</span> })}
                             <h1 className="post-title">{post.title}</h1>
 
                             <p className="post-date"><span>written by </span>
                                 <strong>{post.authors.map(v => { return v.name })}</strong>
                             </p>
+                            <p className="post-date"><span>{moment(post.published_at).format('YYYY MMMM DD')}</span></p>
                         </header>
 
                         <div className="post-content" ref={postEl}>
