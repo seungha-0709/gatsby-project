@@ -647,6 +647,9 @@ code {
 .site-lnb-nav {
     margin-top: 20px;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
 }
 .site-lnb-nav-item {
     display: block;
@@ -674,7 +677,8 @@ code {
 .lnb-message {
     font-size: 0.6rem;
     color: #fff;
-    transform: rotate(270deg)
+    width: 80px;
+    text-align: right;
 }
 
 /* Main
@@ -1620,6 +1624,12 @@ code {
     .post-card:nth-child(odd),
     .post-card:nth-child(even) {
         width: 100%;
+    }
+    .post-content h2 {
+      font-size: 1.4rem;
+    }
+    .post-content h1 {
+      font-size: 1.2rem;
     }
 }
 

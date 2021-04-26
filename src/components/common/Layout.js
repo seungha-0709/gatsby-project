@@ -8,6 +8,7 @@ import { HiOutlineSun } from 'react-icons/hi'
 import { RiMoonFill } from 'react-icons/ri'
 import { FiChevronsLeft } from 'react-icons/fi'
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
+import Category from './Category'
 import { isDarkShift, isToggle } from '../../store/dark'
 import hljs from 'highlight.js';
 import 'highlight.js/styles/night-owl.css';
@@ -109,7 +110,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         </aside>
                         <div ref={lnbNav} className={classNames('lnb-nav')} style={{ display: 'none' }}>
                             <span style={{ cursor: 'pointer' }}><FiChevronsLeft onClick={handleMenuOpen} style={{ color: '#fff', fontSize: '30px' }} /></span>
-                            <div className="site-lnb-nav"><Navigation data={site.navigation} navClass="site-lnb-nav-item" /></div>
+                            <div className="site-lnb-nav">
+                                <Category />
+                            </div>
                             <div className="lnb-message">아직 개발이 진행 중인 블로그입니다.<br /> 다소 불안정할 수 있습니다.</div>
                         </div>
                         <div className="content-wrap">

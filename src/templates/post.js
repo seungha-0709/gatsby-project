@@ -18,16 +18,12 @@ const Post = ({ data, location }) => {
 
     const post = data.ghostPost
 
-    console.log(post)
-
     const postEl = useRef(null)
     const indexBoxEl = useRef(null)
-    console.log(postEl)
 
     useEffect(() => {
         let toc = '';
         const headings = postEl.current.querySelectorAll('h1, h2, h3, h4, h5, h6')
-        console.log(headings)
         headings.forEach((heading) => {
             let title = heading.innerHTML
             let tagName = heading.tagName
