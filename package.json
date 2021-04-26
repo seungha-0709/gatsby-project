@@ -50,6 +50,7 @@
     "gatsby-plugin-catch-links": "2.10.0",
     "gatsby-plugin-feed": "2.13.1",
     "gatsby-plugin-force-trailing-slashes": "1.0.5",
+    "gatsby-plugin-gtag": "^1.0.13",
     "gatsby-plugin-manifest": "2.12.1",
     "gatsby-plugin-offline": "3.10.2",
     "gatsby-plugin-react-helmet": "3.10.0",
@@ -67,6 +68,7 @@
     "react-helmet": "6.1.0",
     "react-highlight": "^0.14.0",
     "react-icons": "^4.2.0",
-    "recoil": "^0.2.0"
+    "recoil": "^0.2.0",
+    "styled-components": "^5.2.3"
   }
 }

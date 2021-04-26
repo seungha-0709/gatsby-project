@@ -39,6 +39,17 @@ module.exports = {
     },
     plugins: [
         /**
+         * google-analytics
+         */
+        {
+            resolve: `gatsby-plugin-gtag`,
+            options: {
+                trackingId: `G-DJ4H6E92S0`, // 측정 ID
+                head: true, // head에 tracking script를 넣고 싶다면 true로 변경 
+                anonymize: true,
+            },
+        },
+        /**
          *  Content Plugins
          */
         {
