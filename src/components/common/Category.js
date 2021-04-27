@@ -73,11 +73,15 @@ const Category = () => {
 
   return (
     <CategoryDiv>
-      <CategoryP>Category</CategoryP>
       <CategoryUl>
         <CategoryLi>
           <CategoryA href={'/'} noopener noreferrer>
             <span>Home</span>
+          </CategoryA>
+        </CategoryLi>
+        <CategoryLi>
+          <CategoryA href={'/about'} noopener noreferrer>
+            <span>About</span>
           </CategoryA>
         </CategoryLi>
         {pageList.map(v => (

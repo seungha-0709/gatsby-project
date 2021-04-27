@@ -613,6 +613,7 @@ code {
   align-items: center;
   background: rgba(247, 251, 255, 0.9);
   position: fixed;
+  z-index: 1;
   right: 0;
 }
 
@@ -634,7 +635,7 @@ code {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     background-color: #248bc2; 
     transition: all 1s ease-in-out;
     display: flex;
