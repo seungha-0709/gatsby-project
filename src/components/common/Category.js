@@ -84,17 +84,17 @@ const Category = () => {
             <span>About</span>
           </CategoryA>
         </CategoryLi>
-        {pageList.map(v => (
+        {/* {pageList.map(v => (
           <CategoryLi>
             <CategoryA href={'/' + `${v.slug}`} noopener noreferrer>
               <span>{v.title}</span>
             </CategoryA>
           </CategoryLi>
-        ))}
+        ))} */}
       </CategoryUl>
       <CategoryUl>
         {tagList.map(v => (
-          <CategoryLi>
+          <CategoryLi key={v.id}>
             <CategoryA href={'/tag/' + `${v.slug}`} noreferrer noopener>
               <span>{v.name}</span>
               <span>{'(' + `${v.count.posts}` + ')'}</span>

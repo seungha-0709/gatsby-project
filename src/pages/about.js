@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import { Link } from 'gatsby'
 import { Layout } from '../components/common'
@@ -12,7 +12,7 @@ const aboutList = [{
 }, {
   title: 'Career',
   background: '#224E95',
-  content: '<p>2020년, 내 나이 서른한 살이던 어느 여름날 처음 개발 공부를 시작했고 그 해 겨울에 신입 개발자로 취업.</p><p>첫 직장은 서울에 있는 어느 국가기관이었음. 전직 7급 공무원.</p><p>영어를 포함하여 7과목을 시험보던 시절, 그 7급 공무원도 면접을 두 번이나 떨어져서 겨우 붙은 거였지만 2년 만에 퇴사...</p><p>그 이후로 여러 직장을 전전했음. 첫 직장을 포함하여, 어딜 가도 나는 조직 부적응자였음. 공무원 퇴사한 거 솔직히 후회도 많이 함. </p><p>그러다 어찌저찌 우연히 개발의 길로 들어섰는데 생각했던 것보다 훨씬 내 적성에 잘 맞아서, 요즘은 재밌게 즐겁게 회사생활 하고 있음.</p><p>나는 태어날 때부터 사회 부적응자인 줄 알았는데 그건 아니었음.</p>'
+  content: '<p>2020년, 내 나이 서른한 살이던 어느 여름날 처음 개발 공부를 시작했고 그 해 겨울에 신입 개발자로 취업.</p><p>첫 직장은 서울에 있는 어느 국가기관이었음. 전직 7급 공무원.</p><p>영어를 포함하여 7과목을 시험보던 시절, 그 7급 공무원도 면접을 두 번이나 떨어져서 겨우 붙은 거였지만 2년 만에 퇴사...</p><p>그 이후로 여러 직장을 전전하다가 어찌저찌 우연히 개발의 길로 들어섰는데 생각했던 것보다 훨씬 내 적성에 잘 맞아서, 요즘은 그 어느 때보다도 재밌게 즐겁게 회사생활 하고 있음.(랄랄라)</p><p>나는 태어날 때부터 사회 부적응자인 줄 알았는데 다행히 그건 아니었음.</p>'
 }, {
   title: 'Tech Stack',
   background: '#1F456A',
@@ -46,11 +46,11 @@ const About = () => {
   const AboutCardTitle = styled.div`
     width: 100px;
     height: 100px;
-    margin: 0;
+    margin: 0 20px 20px 0;
     padding: 10px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 900;
     color: #fff;
-    margin: 0 40px 0 0;
     &:hover + div {
       display: block;
     }
@@ -73,7 +73,7 @@ const About = () => {
     @media screen and (max-width: 1300px) {
       display: block;
       position: static;
-      padding: 20px 0 20px 0;
+      padding: 0px 0 20px 0;
       p {
         font-size: 0.9rem;
         margin: 0 0 20px 0;
@@ -96,13 +96,13 @@ const About = () => {
     justify-content: center;
     align-items: center;
     color: #fff;
+    margin: 0;
     a {
       color: #fff;
       font-size: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0;
       padding: 0;
       &:hover {
         text-decoration: none;
@@ -110,13 +110,15 @@ const About = () => {
     }
   `
 
+
+
   return (
     <Layout>
       <div className="container" style={{ position: 'relative' }}>
         <AboutCardUl>
           {aboutList.map((v, i) => (
             <AboutCardLi key={i}>
-              <AboutCardTitle style={{ background: v.background }}>
+              <AboutCardTitle id={'title' + `${i}`} style={{ background: v.background }}>
                 {v.title}
               </AboutCardTitle>
               { i < aboutList.length - 1 &&
@@ -134,7 +136,7 @@ const About = () => {
                     <Link to='//github.com/seungha-0709'><FaGithub /></Link>
                   </AboutCardIcon>
                   <AboutCardIcon style={{ background: colorList[2] }}>
-                    <Link to='//linkedin.com/seunghakim'><FaLinkedin /></Link>
+                    <Link to='//linkedin.com/in/seunghakim'><FaLinkedin /></Link>
                   </AboutCardIcon>
                 </div>
               )}
