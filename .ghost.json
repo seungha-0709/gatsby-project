@@ -1,10 +1,10 @@
 {
   "development": {
-    "apiUrl": "https://mydevlog-sh.gq",
-    "contentApiKey": "3f1683060558ffc7cd38c32afa"
+    "apiUrl": "https://kimseungha.me",
+    "contentApiKey": "a66ba36570db1489323eb9a32c"
   },
   "production": {
-    "apiUrl": "https://mydevlog-sh.gq",
-    "contentApiKey": "3f1683060558ffc7cd38c32afa"
+    "apiUrl": "https://kimseungha.me",
+    "contentApiKey": "a66ba36570db1489323eb9a32c"
   }
 }
