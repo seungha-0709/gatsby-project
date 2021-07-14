@@ -70,9 +70,9 @@ const Post = ({ data, location }) => {
                             {post.tags && 'Tag: ' + post.tags.map((tag, i) => {
                                 return tag.name
                             })}
-                            <div>
+                            {/* <div>
                                 <Utterances repo='seungha-0709/blog-comments' theme='github-light' />
-                            </div>
+                            </div> */}
                             <div className="prev-next-wrap">
 
                                 {/* {{#prev_post}}
