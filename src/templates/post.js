@@ -67,9 +67,9 @@ const Post = ({ data, location }) => {
                         </div>
 
                         <footer className="post-footer clearfix">
-                            {post.tags && 'Tag: ' + post.tags.map((tag, i) => {
+                            {/* {post.tags && 'Tag: ' + post.tags.map((tag, i) => {
                                 return tag.name
-                            })}
+                            })} */}
                             {/* <div>
                                 <Utterances repo='seungha-0709/blog-comments' theme='github-light' />
                             </div> */}

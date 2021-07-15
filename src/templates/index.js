@@ -22,7 +22,7 @@ const Index = ({ data, location, pageContext }) => {
             <Layout isHome={true}>
                 <div className="container">
                     <section className="post-feed">
-                        {posts.map(({ node }) => (
+                        {posts.reverse().map(({ node }) => (
                             // The tag below includes the markup for each post - components/common/PostCard.js
                             <PostCard key={node.id} post={node} />
                         ))}
