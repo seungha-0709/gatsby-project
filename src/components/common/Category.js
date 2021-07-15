@@ -69,8 +69,6 @@ const Category = () => {
   const { allGhostPage } = data;
   const { nodes: pageList } = allGhostPage
 
-  console.log(tagList)
-
   return (
     <CategoryDiv>
       <CategoryUl>
