@@ -113,7 +113,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                             <div className="site-lnb-nav">
                                 <Category />
                             </div>
-                            <div className="lnb-message">아직 개발이 진행 중인 블로그입니다.<br /> 다소 불안정할 수 있습니다.</div>
+                            {/* <div className="lnb-message">아직 개발이 진행 중인 블로그입니다.<br /> 다소 불안정할 수 있습니다.</div> */}
                         </div>
                         <div className="content-wrap">
                             <header className="site-head">
@@ -142,7 +142,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     <div className="site-foot-nav container">
                                         <div className="site-foot-nav-left">
                                             {/* <Link to="/">{site.title}</Link> */}
-                                             © 2021 <br /> Published with <br /> <a style={{ display: 'inline-block' }} className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer"> Ghost</a>, Gatsby and Netlify
+                                            © 2021 <br /> Published with <br /> <a style={{ display: 'inline-block' }} className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer"> Ghost</a>, Gatsby and Netlify
                                             <span style={{ display: 'block' }}>Designed by Seungha</span>
                                         </div>
                                     </div>
