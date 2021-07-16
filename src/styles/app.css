@@ -1628,7 +1628,7 @@ code {
         font-size: 2rem;
     }
     .content-body p, li, blockquote {
-        line-height: 1.6;
+        line-height: 1.8;
         font-size: 0.9rem;
     }
     .post-card:nth-child(odd),

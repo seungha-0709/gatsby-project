@@ -46,9 +46,17 @@ const Post = ({ data, location }) => {
     })
 
     const PrevNext = styled.div`
+      margin-bottom: 20px; 
       p {
         font-size: 0.8rem;
         margin: 8px;
+        line-height: 1.4;
+      }
+      a {
+          color: #6d747a;
+      }
+      @media screen and (max-width: 900px) {
+          width: 100%;
       }
     `
 
@@ -91,7 +99,7 @@ const Post = ({ data, location }) => {
                             {/* <div>
                                 <Utterances repo='seungha-0709/blog-comments' theme='github-light' />
                             </div> */}
-                            <div className="prev-next-wrap">
+                            <div style={{ width: '100%', marginTop: '60px' }}>
                                 <div>
                                     {prevPost && <PrevNext>
                                         <p><GrFormPrevious /> Prev</p>
@@ -101,7 +109,7 @@ const Post = ({ data, location }) => {
                                 <div>
                                     {nextPost && <PrevNext>
                                         <p style={{ textAlign: 'right' }}>Next <GrFormNext /></p>
-                                        <Link to={`/${nextPost.node.slug}/`}><p>{nextPost.node.title}</p></Link>
+                                        <Link to={`/${nextPost.node.slug}/`}><p style={{ textAlign: 'right' }}>{nextPost.node.title}</p></Link>
                                     </PrevNext>}
                                 </div>
 
