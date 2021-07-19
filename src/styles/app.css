@@ -784,6 +784,27 @@ code {
     width: 600px;
     background: rgb(147, 193, 231);
   }
+  .post-card:nth-child(10):hover {
+    background: rgb(189, 210, 223);
+  }
+  .post-card:nth-child(10) {
+    width: 600px;
+    background-color: #fff;
+  }
+  .post-card:nth-child(11):hover {
+    background: rgb(66, 157, 231);
+  }
+  .post-card:nth-child(11) {
+    width: 300px;
+    background-color: #eee;
+  }
+  .post-card:nth-child(12):hover {
+    background: #b4def5;
+  }
+  .post-card:nth-child(12) {
+    width: 300px;
+    background: #b1c6d8;
+  }
   
   .post-card-tags {
     display: block;
@@ -834,7 +855,10 @@ code {
     .post-card:nth-child(6),
     .post-card:nth-child(7),
     .post-card:nth-child(8),
-    .post-card:nth-child(9) {
+    .post-card:nth-child(9),
+    .post-card:nth-child(10),
+    .post-card:nth-child(11),
+    .post-card:nth-child(12) {
         width: 300px;
     }
 }
@@ -851,7 +875,10 @@ code {
     .post-card:nth-child(6),
     .post-card:nth-child(7),
     .post-card:nth-child(8),
-    .post-card:nth-child(9) {
+    .post-card:nth-child(9),
+    .post-card:nth-child(10),
+    .post-card:nth-child(11),
+    .post-card:nth-child(12) {
         width: 100%;
     }
 }
@@ -1461,6 +1488,24 @@ code {
   }
   .darkmode .post-card:nth-child(9) {
     background: rgb(147, 193, 231, 0.2);
+  }
+  .darkmode .post-card:nth-child(10):hover {
+    background: rgb(189, 210, 223, 0.2);
+  }
+  .darkmode .post-card:nth-child(10) {
+    background-color: #111;
+  }
+  .darkmode .post-card:nth-child(11):hover {
+    background: rgb(66, 157, 231, 0.2);
+  }
+  .darkmode .post-card:nth-child(11) {
+    background-color: rgb(26, 35, 49);
+  }
+  .darkmode .post-card:nth-child(12):hover {
+    background: #13384d;
+  }
+  .darkmode .post-card:nth-child(12) {
+    background: #292f35;
   }
   .darkmode .lnb-bg {
       background: #002e49
