@@ -934,13 +934,13 @@ code {
     font-weight: 700;
     margin: 15px 0;
   }
-  .post-title::after,
+  /* .post-title::after,
   .page-title::after {
     content: '.';
     font-size: 2rem;
     font-weight: 700;
     color:var(--color-primary);
-  }
+  } */
   
   
   .page-title {
@@ -1155,7 +1155,7 @@ code {
 
 .pagination {
     position: relative;
-    display: flex;
+    /* display: flex; */
     justify-content: flex-start;
     align-items: center;
     margin: 4vw 0 0;
@@ -1163,21 +1163,39 @@ code {
 
 .pagination a {
     display: inline-block;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     color: var(--color-base);
     text-decoration: none;
     font-size: 1rem;
     line-height: 1em;
 }
 
+.pagination-link {
+    display: inline-block;
+    /* padding: 10px 15px; */
+    color: var(--color-base);
+    text-decoration: underline;
+    font-size: 1rem;
+    line-height: 1em;
+}
+.pagination-nolink {
+  display: inline-block;
+    /* padding: 10px 15px; */
+    color: var(--color-border);
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1em;
+}
+.pagination-box {
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+}
 .pagination-location {
-    position: absolute;
-    left: 50%;
-    width: 100px;
-    margin-left: -50px;
-    text-align: center;
+    display: inline-block;
+    margin-bottom: 20px;
     color: var(--color-secondary);
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 
@@ -1512,6 +1530,12 @@ code {
   }
   .darkmode .lnb-nav {
       background: #004770;
+  }
+  .darkmode .pagination-nolink {
+    color:rgb(152, 169, 185)
+  }
+  .darkmode .pagination-link {
+    color: #fff;
   }
   
 

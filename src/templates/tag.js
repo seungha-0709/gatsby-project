@@ -29,7 +29,7 @@ const Tag = ({ data, location, pageContext }) => {
                         {tag.description ? <p>{tag.description}</p> : null}
                     </header>
                     <section className="post-feed">
-                        {posts.reverse().map(({ node }) => (
+                        {posts.map(({ node }) => (
                             // The tag below includes the markup for each post - components/common/PostCard.js
                             <PostCard key={node.id} post={node} />
                         ))}
@@ -63,7 +63,7 @@ export const pageQuery = graphql`
             ...GhostTagFields
         }
         allGhostPost(
-            sort: { order: DESC, fields: [published_at] },
+            sort: { order: ASC, fields: [published_at] },
             filter: {tags: {elemMatch: {slug: {eq: $slug}}}},
             limit: $limit,
             skip: $skip
