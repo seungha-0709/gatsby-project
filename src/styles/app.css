@@ -994,7 +994,7 @@ code {
     /* padding: 10px 15px; */
     color: var(--color-base);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1em;
 }
 
@@ -1003,7 +1003,7 @@ code {
     /* padding: 10px 15px; */
     color: var(--color-base);
     text-decoration: underline;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1em;
 }
 .pagination-nolink {
@@ -1011,7 +1011,7 @@ code {
     /* padding: 10px 15px; */
     color: var(--color-border);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1em;
 }
 .pagination-box {
@@ -1022,8 +1022,8 @@ code {
 .pagination-location {
     display: inline-block;
     margin-bottom: 20px;
-    color: var(--color-secondary);
-    font-size: 1rem;
+    color: #212121;
+    font-size: 0.9rem;
 }
 
 
@@ -1509,7 +1509,7 @@ code {
   .lnb-footer {
     margin-top: 20px;
     color: #212121;
-    font-size: 0.4rem;
+    font-size: 0.6rem;
   }
  
   .darkmode .bm-burger-button {
