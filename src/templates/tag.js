@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import styled from 'styled-components';
 
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -12,6 +13,14 @@ import { MetaData } from '../components/common/meta'
 *
 */
 const Tag = ({ data, location, pageContext }) => {
+
+    const Section = styled.section`
+      width: 900px;
+      @media (max-width: 1200px) {
+        width: 100%;
+      }
+    `
+
     const tag = data.ghostTag
     const posts = data.allGhostPost.edges
 
@@ -25,15 +34,15 @@ const Tag = ({ data, location, pageContext }) => {
             <Layout>
                 <div className="container">
                     <header className="tag-header">
-                        <h1>{tag.name}</h1>
+                        <h1>Tag: {tag.name}</h1>
                         {tag.description ? <p>{tag.description}</p> : null}
                     </header>
-                    <section className="post-feed">
+                    <Section>
                         {posts.map(({ node }) => (
                             // The tag below includes the markup for each post - components/common/PostCard.js
                             <PostCard key={node.id} post={node} />
                         ))}
-                    </section>
+                    </Section>
                     <Pagination pageContext={pageContext} />
                 </div>
             </Layout>

@@ -26,7 +26,7 @@ what's here to work the way you'd like it to.
     --color-base: #15171A;
     --color-secondary: #6d747a;
     --color-border: #c7d5d8;
-    --color-bg:#f7fbff;;
+    --color-bg:#f8f8f8;
 
     /* Fonts */
     --font-sans-serif: "Spoqa Han Sans", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -544,6 +544,10 @@ code {
     color: #ce0041;
   }
 
+  .none-underline:hover {
+    text-decoration: none;
+  }
+
 /* Layout
 /* ---------------------------------------------------------- */
 
@@ -613,7 +617,7 @@ code {
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  background: rgba(247, 251, 255, 0.9);
+  background: var(--color-bg);
   position: fixed;
   z-index: 1;
   right: 0;
@@ -700,188 +704,6 @@ code {
 }
 .post-feed a {
     text-decoration: none;
-}
-.post-card {
-    display: block;
-    width: 300px;
-    height: 300px;
-    padding: 20px;
-    margin: 0px;
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    overflow: hidden;
-    justify-content: space-between;
-    background-color: #e3e9f0;
-  }
-  .post-card:hover {
-    background: #7cb3d1;
-  }
-  .post-card:nth-child(even) {
-    width: 600px;
-    background-color: rgb(218, 232, 247);
-  }
-  .post-card:nth-child(1):hover {
-    background: rgb(189, 210, 223);
-  }
-  .post-card:nth-child(1) {
-    width: 600px;
-    background-color: #fff;
-  }
-  .post-card:nth-child(2):hover {
-    background: rgb(66, 157, 231);
-  }
-  .post-card:nth-child(2) {
-    width: 300px;
-    background-color: #eee;
-  }
-  .post-card:nth-child(3):hover {
-    background: #b4def5;
-  }
-  .post-card:nth-child(3) {
-    width: 300px;
-    background: #b1c6d8;
-  }
-  .post-card:nth-child(4):hover {
-    background: #65a4c9;
-  }
-  .post-card:nth-child(4) {
-    width: 300px;
-    background-color: #ddd;
-  }
-  .post-card:nth-child(5):hover {
-    background:#579ada
-  }
-  .post-card:nth-child(5) {
-    width: 600px;
-    background: #d8e8f9;
-  }
-  .post-card:nth-child(6):hover {
-    background: rgb(191, 201, 218);
-  }
-  .post-card:nth-child(6) {
-    width: 300px;
-    background-color: #eceff1;
-  }
-  .post-card:nth-child(7):hover {
-    background: #4eb1e6;
-  }
-  .post-card:nth-child(7) {
-    width: 300px;
-    background-color: #ffffff;
-  }
-  .post-card:nth-child(8):hover {
-    background: rgb(152, 169, 185);
-  }
-  .post-card:nth-child(8) {
-    width: 300px;
-    background-color: rgb(192, 220, 233);
-  }
-  .post-card:nth-child(9):hover {
-    background-color: rgb(54, 133, 197);
-  }
-  .post-card:nth-child(9) {
-    width: 600px;
-    background: rgb(147, 193, 231);
-  }
-  .post-card:nth-child(10):hover {
-    background: rgb(189, 210, 223);
-  }
-  .post-card:nth-child(10) {
-    width: 600px;
-    background-color: #fff;
-  }
-  .post-card:nth-child(11):hover {
-    background: rgb(66, 157, 231);
-  }
-  .post-card:nth-child(11) {
-    width: 300px;
-    background-color: #eee;
-  }
-  .post-card:nth-child(12):hover {
-    background: #b4def5;
-  }
-  .post-card:nth-child(12) {
-    width: 300px;
-    background: #b1c6d8;
-  }
-  
-  .post-card-tags {
-    display: block;
-    width: 100%;
-    font-size: 0.8rem;
-    color: #0079bb;
-    font-weight: 600;
-    padding: 0;
-    margin: 0;
-  }
-  .post-card-title {
-    display: block;
-    width: 100%;
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin: 10px 0 0 0;
-    line-height: 1.2;
-  }
-  .post-card-excerpt {
-      display: block;
-      width: 100%;
-      font-size: 0.8rem;
-      line-height: 1.5;
-      color: #24292e;
-      font-weight: 400;
-      margin-top: 5px;
-      margin-bottom: 5px;
-  }
-  .post-card-footer {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    font-size: 0.8rem;
-    color: var(--color-secondary)
-  }
-
-
-@media (max-width: 980px) {
-    .post-feed {
-      display: flex;
-      width: 100%;
-    }
-    .post-card:nth-child(1),
-    .post-card:nth-child(2),
-    .post-card:nth-child(3),
-    .post-card:nth-child(4),
-    .post-card:nth-child(5),
-    .post-card:nth-child(6),
-    .post-card:nth-child(7),
-    .post-card:nth-child(8),
-    .post-card:nth-child(9),
-    .post-card:nth-child(10),
-    .post-card:nth-child(11),
-    .post-card:nth-child(12) {
-        width: 300px;
-    }
-}
-@media (max-width: 680px) {
-    .post-feed {
-        display: block;
-        width: 100%;
-    }
-    .post-card:nth-child(1),
-    .post-card:nth-child(2),
-    .post-card:nth-child(3),
-    .post-card:nth-child(4),
-    .post-card:nth-child(5),
-    .post-card:nth-child(6),
-    .post-card:nth-child(7),
-    .post-card:nth-child(8),
-    .post-card:nth-child(9),
-    .post-card:nth-child(10),
-    .post-card:nth-child(11),
-    .post-card:nth-child(12) {
-        width: 100%;
-    }
 }
 
 
@@ -1454,90 +1276,18 @@ code {
     background: #212121;
     opacity: 0.8;
   }
-  .darkmode .post-card:nth-child(1):hover {
-    background: rgb(189, 210, 223, 0.2);
+  
+  .darkmode .none-underline div,
+  .darkmode .none-underline h2 {
+    color: #f8f8f8;
   }
-  .darkmode .post-card:nth-child(1) {
-    background-color: #111;
-  }
-  .darkmode .post-card:nth-child(2):hover {
-    background: rgb(66, 157, 231, 0.2);
-  }
-  .darkmode .post-card:nth-child(2) {
-    background-color: rgb(26, 35, 49);
-  }
-  .darkmode .post-card:nth-child(3):hover {
-    background: #13384d;
-  }
-  .darkmode .post-card:nth-child(3) {
-    background: #292f35;
-  }
-  .darkmode .post-card:nth-child(4):hover {
-    background: #004770;
-  }
-  .darkmode .post-card:nth-child(4) {
-    background-color: rgb(48, 41, 41);
-  }
-  .darkmode .post-card:nth-child(5):hover {
-    background:#34608a
-  }
-  .darkmode .post-card:nth-child(5) {
-    background: #404b57;
-  }
-  .darkmode .post-card:nth-child(6):hover {
-    background: rgb(191, 201, 218, 0.2);
-  }
-  .darkmode .post-card:nth-child(6) {
-    background-color: #0b2536;
-  }
-  .darkmode .post-card:nth-child(7):hover {
-    background: #0f4563;
-  }
-  .darkmode .post-card:nth-child(7) {
-    background-color: rgb(8, 8, 8);
-  }
-  .darkmode .post-card:nth-child(8):hover {
-    background: rgb(152, 169, 185, 0.2);
-  }
-  .darkmode .post-card:nth-child(8) {
-    background-color: rgb(192, 220, 233, 0.2);
-  }
-  .darkmode .post-card:nth-child(9):hover {
-    background-color: rgb(54, 133, 197,0.2);
-  }
-  .darkmode .post-card:nth-child(9) {
-    background: rgb(147, 193, 231, 0.2);
-  }
-  .darkmode .post-card:nth-child(10):hover {
-    background: rgb(189, 210, 223, 0.2);
-  }
-  .darkmode .post-card:nth-child(10) {
-    background-color: #111;
-  }
-  .darkmode .post-card:nth-child(11):hover {
-    background: rgb(66, 157, 231, 0.2);
-  }
-  .darkmode .post-card:nth-child(11) {
-    background-color: rgb(26, 35, 49);
-  }
-  .darkmode .post-card:nth-child(12):hover {
-    background: #13384d;
-  }
-  .darkmode .post-card:nth-child(12) {
-    background: #292f35;
-  }
-  .darkmode .lnb-bg {
+    .darkmode .lnb-bg {
       background: #002e49
   }
   .darkmode .lnb-nav {
       background: #004770;
   }
-  .darkmode .pagination-nolink {
-    color:rgb(152, 169, 185)
-  }
-  .darkmode .pagination-link {
-    color: #fff;
-  }
+  
   
 
 

@@ -8,7 +8,8 @@ const Lnb = () => {
 
   return (
     <div className='lnb-bg'>
-      <div className={classNames('lnb-nav', isMenuOpen ? 'open' : '')}>
+      <div>
+        {/* <div className={classNames('lnb-nav', isMenuOpen ? 'open' : '')}> */}
         <Navigation />
       </div>
     </div>

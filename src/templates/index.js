@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
+import styled from 'styled-components';
 
 /**
 * Main index page (home page)
@@ -14,6 +15,14 @@ import { MetaData } from '../components/common/meta'
 *
 */
 const Index = ({ data, location, pageContext }) => {
+
+    const Section = styled.section`
+      width: 900px;
+      @media (max-width: 1200px) {
+        width: 100%;
+      }
+    `
+
     const posts = data.allGhostPost.edges
 
     return (
@@ -21,12 +30,12 @@ const Index = ({ data, location, pageContext }) => {
             <MetaData location={location} />
             <Layout isHome={true}>
                 <div className="container">
-                    <section className="post-feed">
+                    <Section>
                         {posts.map(({ node }) => (
                             // The tag below includes the markup for each post - components/common/PostCard.js
                             <PostCard key={node.id} post={node} />
                         ))}
-                    </section>
+                    </Section>
                     <Pagination pageContext={pageContext} />
                 </div>
             </Layout>
