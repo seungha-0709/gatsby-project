@@ -616,8 +616,8 @@ code {
 @media screen and (max-width: 800px) {
   .site-head {
     width: 100%;
-    height: auto;
-    padding: 15px;
+    height: 40px;
+    box-sizing: border-box;
     margin-bottom: 20px;
     box-sizing: border-box;
     display: flex;
@@ -1379,7 +1379,7 @@ code {
         width: 100%;
     }
     .post-container {
-      width: calc(100% - 400px);
+      width: 100%;
     }
     .post-wrapper {
         width: 100%;
@@ -1418,7 +1418,6 @@ code {
     .post-container {
       margin: 0;
       width: 100%;
-      padding: 20px;
     }
     .post-wrapper {
         width: 100%;
@@ -1491,3 +1490,98 @@ code {
     font-weight: 400;
     padding-left: 10px;
   }
+
+  .hamburger {
+    background-color: var(--color-bg);
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 250px !important;
+  }
+
+  .darkmode .hamburger {
+    background-color: #212121;
+  }
+  .darkmode .lnb-footer {
+    color: #fff;
+  }
+
+  .lnb-footer {
+    margin-top: 20px;
+    color: #212121;
+    font-size: 0.4rem;
+  }
+ 
+  .darkmode .bm-burger-button {
+    color: #fff;
+  }
+  /* Position and sizing of burger button */
+.bm-burger-button {
+  color: #212121;
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  left: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: transparent;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #13A4F2;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: transparent;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+}

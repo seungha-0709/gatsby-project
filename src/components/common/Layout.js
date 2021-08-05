@@ -96,7 +96,6 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
 
     const Lnb = styled.div`
-      /* background-color: var(--color-bg); */
       position: fixed;
       top: 0;
       left: 0;
@@ -142,28 +141,20 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
         margin-left: 400px;
         width: 100%;
         @media screen and (max-width: 1500px) {
-          margin-left: 360px;
-          width: 100%;
+          margin-left: 300px;
+          padding: 0 40px;
+          width: calc(100% - 300px);
       }
         @media screen and (max-width: 800px) {
             margin: 40px 0 0 0;
+            width: 100%;
+            padding: 20px;
         }
     `
 
-    const Header = styled.header`
-      display: none;
-      @media screen and (max-width: 800px) {
-        display: flex;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 60px;
-        padding: 20px;
-        background-color: var(--color-bg);
-      }
-      
-    `
+    const LnbFooter = styled.div`
+       margin-top: 60px;
+     `
 
     return (
         <>
@@ -176,16 +167,29 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             <div className={classNames('viewport', isDark ? 'darkmode' : '')}>
 
                 <header className="site-head">
-                    <div className="toggle-button">
-                        <div className="toggle-bg">
-                            <div
-                                className={classNames('click', isToggleDark ? 'dark' : '')}
-                                onClick={handleToggleClick}
-                            ></div>
-                            <RiMoonFill style={{ color: '#fff', fontSize: '16px' }} />
-                            <HiOutlineSun style={{ color: '#fff', fontSize: '16px' }} />
-                        </div>
+                    <div>
+                        <Menu customBurgerIcon={<GiHamburgerMenu style={{ fontSize: '24px' }} />} className={"hamburger"}>
+                            <Category />
+                            <LnbFooter>
+                                <div className="toggle-button">
+                                    <div className="toggle-bg">
+                                        <div
+                                            className={classNames('click', isToggleDark ? 'dark' : '')}
+                                            onClick={handleToggleClick}
+                                        ></div>
+                                        <RiMoonFill style={{ color: '#fff', fontSize: '16px' }} />
+                                        <HiOutlineSun style={{ color: '#fff', fontSize: '16px' }} />
+                                    </div>
+                                </div>
+                                <div className="lnb-footer">
+                                    © 2021 <br /> Published with <br /> Ghost, Gatsby and Netlify
+                                    <span style={{ display: 'block' }}>Designed by Seungha Kim</span>
+                                </div>
+                            </LnbFooter>
+
+                        </Menu>
                     </div>
+
                 </header>
 
                 <div className="viewport-top">
@@ -225,22 +229,6 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         </div> */}
 
                         <ContentWrap>
-                            {/* <header className="site-head">
-                                <div style={{ display: 'flex' }}>
-                                    <span className="btn-circle">
-                                        <GiHamburgerMenu style={{ fontSize: '20px', color: '#fff' }} onClick={handleMenuOpen} /></span>
-                                    <div className="toggle-button">
-                                        <div className="toggle-bg">
-                                            <div
-                                                className={classNames('click', isToggleDark ? 'dark' : '')}
-                                                onClick={handleToggleClick}
-                                            ></div>
-                                            <RiMoonFill style={{ color: '#fff', fontSize: '16px' }} />
-                                            <HiOutlineSun style={{ color: '#fff', fontSize: '16px' }} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </header> */}
                             <main className="site-main">
                                 {/* All the main content gets inserted here, index.js, post.js */}
                                 {children}
