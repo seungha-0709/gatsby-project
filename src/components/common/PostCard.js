@@ -20,7 +20,9 @@ const PostCard = ({ post }) => {
       margin-right: 20px;
       font-size: 0.8rem;
       text-align: right;
-      /* font-family: 'Noto Serif CJK'; */
+      @media screen and (max-width: 400px) {
+          font-size: 0.6rem;
+      }
     `
     const PostBox = styled.div`
       width: 100%;
@@ -37,8 +39,10 @@ const PostCard = ({ post }) => {
       font-weight: 600;
       padding: 0;
       margin: 0;
-      /* font-family: 'Noto Serif CJK'; */
       font-weight: 300;
+      @media screen and (max-width: 400px) {
+          font-size: 0.6rem;
+      }
     `
     const PostCardTitle = styled.h2`
       display: block;
@@ -46,7 +50,9 @@ const PostCard = ({ post }) => {
       font-weight: 600;
       font-size: 1.2rem;
       margin: 4px 0 12px 0;
-      /* font-family: 'Noto Serif CJK'; */
+      @media screen and (max-width: 400px) {
+          font-size: 1rem;
+      }
     `
     const PostCardExcerpt = styled.div`
       display: block;
@@ -71,7 +77,7 @@ const PostCard = ({ post }) => {
       @media screen and (max-width: 400px) {
         display: block;
         width: 100%;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         line-height: 1.5;
         color: #24292e;
         font-weight: 400;
