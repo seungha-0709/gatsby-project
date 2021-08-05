@@ -45,6 +45,14 @@ const Post = ({ data, location }) => {
         indexBoxEl.current.innerHTML = `<ul>${toc}</ul>`;
     })
 
+    const PostTitle = styled.h2`
+      font-size: 1.8rem;
+      margin-top: 20px;
+      @media screen and (max-width: 400px) {
+          font-size: 1.4rem;
+      }
+    `
+
     const PrevNext = styled.div`
       margin-bottom: 20px; 
       p {
@@ -75,7 +83,7 @@ const Post = ({ data, location }) => {
                     <div className="post-wrapper">
                         <header className="post-header">
                             {post.tags && post.tags.map((tag, i) => { return <span key={i} className="post-tags-title">{tag.name + '. '}</span> })}
-                            <h1 className="post-title">{post.title}</h1>
+                            <h2 className="post-title">{post.title}</h2>
 
                             <p className="post-date"><span>written by </span>
                                 <strong>{post.authors.map(v => { return v.name })}</strong>

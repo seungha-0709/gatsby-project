@@ -23,7 +23,7 @@ const Category = () => {
   const CategoryUl = styled.ul`
     list-style: none;
     font-size: 0.9rem;
-    color: #fff;
+    color: #0079bb;
     margin: 0 0 10px 0;
     padding: 0;
     width: 100%;
@@ -32,12 +32,16 @@ const Category = () => {
   const CategoryLi = styled.li`
     margin: 0;
     padding: 0;
-    text-align: right;
+    /* text-align: right; */
   `
 
   const CategoryA = styled.a`
-    color: #fff;
-    font-size: 0.8rem;
+    color: #13A4F2;
+    font-size: 0.75rem;
+    display: inline-block;
+    border-bottom: 1px dotted #13A4F2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   `
 
   const data = useStaticQuery(graphql`

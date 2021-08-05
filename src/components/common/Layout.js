@@ -12,6 +12,9 @@ import Category from './Category'
 import { isDarkShift, isToggle } from '../../store/dark'
 import hljs from 'highlight.js';
 import 'highlight.js/styles/night-owl.css';
+import styled from 'styled-components';
+import { slide as Menu } from 'react-burger-menu'
+
 
 
 
@@ -50,46 +53,117 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
         setIsMenuOpen(!isMenuOpen)
     }, [isMenuOpen])
 
-    const [windowWidth, setWindowWidth] = useState(null)
-    const handleResize = () => {
-        setWindowWidth(window.innerWidth)
-    }
+    // const [windowWidth, setWindowWidth] = useState(null)
+    // const handleResize = () => {
+    //     setWindowWidth(window.innerWidth)
+    // }
 
-    useEffect(() => {
-        setWindowWidth(window.innerWidth)
-        window.addEventListener('resize', handleResize);
-        return () => { // cleanup 
-            window.removeEventListener('resize', handleResize);
-        }
-    }, []);
+    // useEffect(() => {
+    //     setWindowWidth(window.innerWidth)
+    //     window.addEventListener('resize', handleResize);
+    //     return () => { // cleanup 
+    //         window.removeEventListener('resize', handleResize);
+    //     }
+    // }, []);
 
-    const lnbBox = useRef(null)
-    const lnbNav = useRef(null)
+    // const lnbBox = useRef(null)
+    // const lnbNav = useRef(null)
 
-    useEffect(() => {
-        lnbNav.current.style.display = 'flex'
-        if (windowWidth < 400) {
-            lnbNav.current.style.width = '100px'
-            lnbNav.current.style.left = '-100px'
-            if (isMenuOpen) {
-                lnbNav.current.style.width = windowWidth / 1.2 + 'px'
-            } else {
-                lnbNav.current.style.width = '100px'
-            }
-        } else {
-            lnbNav.current.style.left = '-10%'
-            lnbNav.current.style.width = '0px'
-            if (isMenuOpen) {
-                lnbNav.current.style.width = windowWidth / 2.5 + 'px'
-            } else {
-                lnbNav.current.style.width = '0px'
-            }
-        }
-    }, [isMenuOpen, windowWidth])
+    // useEffect(() => {
+    //     lnbNav.current.style.display = 'flex'
+    //     if (windowWidth < 400) {
+    //         lnbNav.current.style.width = '100px'
+    //         lnbNav.current.style.left = '-100px'
+    //         if (isMenuOpen) {
+    //             lnbNav.current.style.width = windowWidth / 1.2 + 'px'
+    //         } else {
+    //             lnbNav.current.style.width = '100px'
+    //         }
+    //     } else {
+    //         lnbNav.current.style.left = '-10%'
+    //         lnbNav.current.style.width = '0px'
+    //         if (isMenuOpen) {
+    //             lnbNav.current.style.width = windowWidth / 2.5 + 'px'
+    //         } else {
+    //             lnbNav.current.style.width = '0px'
+    //         }
+    //     }
+    // }, [isMenuOpen, windowWidth])
 
     useEffect(() => {
         hljs.highlightAll();
     }, [])
+
+
+    const Lnb = styled.div`
+      /* background-color: var(--color-bg); */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 400px;
+      height: 100vh; 
+      .darkmode {
+        background-color: #212121;
+      }
+      @media screen and (max-width: 1500px) {
+          width: 300px;
+      }
+      @media screen and (max-width: 800px) {
+          display: none;
+      }
+    `
+
+    const LeftSide = styled.div`
+        width: 100%;
+        padding-top: 150px;
+        padding-left: 100px;
+        @media screen and (max-width: 1200px) {
+          padding-left: 60px;
+      }
+    `
+    const Copyright = styled.footer`
+        font-size: 0.8rem;
+        margin-top: 20px;
+    `
+    const SquareLogo = styled.div`
+        width: 60px;
+        height: 60px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #0079bb #13A4F2 #13A4F2 #0079bb;
+        margin-bottom: 40px;
+        padding: 2px;
+        line-height: 1;
+        color: #13A4F2;
+        font-size: 0.4rem;
+    `
+    const ContentWrap = styled.div`
+        margin-left: 400px;
+        width: 100%;
+        @media screen and (max-width: 1500px) {
+          margin-left: 360px;
+          width: 100%;
+      }
+        @media screen and (max-width: 800px) {
+            margin: 40px 0 0 0;
+        }
+    `
+
+    const Header = styled.header`
+      display: none;
+      @media screen and (max-width: 800px) {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 60px;
+        padding: 20px;
+        background-color: var(--color-bg);
+      }
+      
+    `
 
     return (
         <>
@@ -102,21 +176,54 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             <div className={classNames('viewport', isDark ? 'darkmode' : '')}>
 
                 <div className="viewport-top">
-                    {/* {isHome && } */}
-                    {/* The main header section on top of the screen */}
-                    <div className="layout-wrap" style={{ display: 'flex' }}>
+                    <div className="layout-wrap">
                         <aside className="lnb-wrap">
-                            <div ref={lnbBox} className='lnb-bg'></div>
+                            <Lnb>
+                                <LeftSide>
+                                    <SquareLogo>
+                                        MY<br />
+                                        JOURNAL
+                                    </SquareLogo>
+                                    <Category />
+                                    <div style={{ marginTop: '80px' }}>
+                                        <div className="toggle-button">
+                                            <div className="toggle-bg">
+                                                <div
+                                                    className={classNames('click', isToggleDark ? 'dark' : '')}
+                                                    onClick={handleToggleClick}
+                                                ></div>
+                                                <RiMoonFill style={{ color: '#fff', fontSize: '16px' }} />
+                                                <HiOutlineSun style={{ color: '#fff', fontSize: '16px' }} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <Copyright>
+                                        © 2021 <br /> Published with <br /> Ghost, Gatsby and Netlify
+                                        <span style={{ display: 'block' }}>Designed by Seungha Kim</span>
+                                    </Copyright>
+                                </LeftSide>
+                            </Lnb>
                         </aside>
-                        <div ref={lnbNav} className={classNames('lnb-nav')} style={{ display: 'none' }}>
+                        {/* <div ref={lnbNav} className={classNames('lnb-nav')} style={{ display: 'none' }}>
                             <span style={{ cursor: 'pointer' }}><FiChevronsLeft onClick={handleMenuOpen} style={{ color: '#fff', fontSize: '30px' }} /></span>
                             <div className="site-lnb-nav">
                                 <Category />
                             </div>
-                            {/* <div className="lnb-message">아직 개발이 진행 중인 블로그입니다.<br /> 다소 불안정할 수 있습니다.</div> */}
-                        </div>
-                        <div className="content-wrap">
-                            <header className="site-head">
+                        </div> */}
+                        <Header>
+                            <div className="toggle-button">
+                                <div className="toggle-bg">
+                                    <div
+                                        className={classNames('click', isToggleDark ? 'dark' : '')}
+                                        onClick={handleToggleClick}
+                                    ></div>
+                                    <RiMoonFill style={{ color: '#fff', fontSize: '16px' }} />
+                                    <HiOutlineSun style={{ color: '#fff', fontSize: '16px' }} />
+                                </div>
+                            </div>
+                        </Header>
+                        <ContentWrap>
+                            {/* <header className="site-head">
                                 <div style={{ display: 'flex' }}>
                                     <span className="btn-circle">
                                         <GiHamburgerMenu style={{ fontSize: '20px', color: '#fff' }} onClick={handleMenuOpen} /></span>
@@ -131,25 +238,16 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                         </div>
                                     </div>
                                 </div>
-                            </header>
+                            </header> */}
                             <main className="site-main">
                                 {/* All the main content gets inserted here, index.js, post.js */}
                                 {children}
                             </main>
                             <div className="viewport-bottom">
                                 {/* The footer at the very bottom of the screen */}
-                                <footer className="site-foot">
-                                    <div className="site-foot-nav container">
-                                        <div className="site-foot-nav-left">
-                                            {/* <Link to="/">{site.title}</Link> */}
-                                            © 2021 <br /> Published with <br /> <a style={{ display: 'inline-block' }} className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer"> Ghost</a>, Gatsby and Netlify
-                                            <span style={{ display: 'block' }}>Designed by Seungha</span>
-                                        </div>
-                                    </div>
-                                </footer>
 
                             </div>
-                        </div>
+                        </ContentWrap>
 
                     </div>
 

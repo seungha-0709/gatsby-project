@@ -20,6 +20,7 @@ const PostCard = ({ post }) => {
       margin-right: 20px;
       font-size: 0.8rem;
       text-align: right;
+      /* font-family: 'Noto Serif CJK'; */
     `
     const PostBox = styled.div`
       width: 100%;
@@ -36,14 +37,16 @@ const PostCard = ({ post }) => {
       font-weight: 600;
       padding: 0;
       margin: 0;
+      /* font-family: 'Noto Serif CJK'; */
+      font-weight: 300;
     `
     const PostCardTitle = styled.h2`
       display: block;
       width: 100%;
       font-weight: 600;
       font-size: 1.2rem;
-      margin: 10px 0 0 0;
-      line-height: 1.2;
+      margin: 4px 0 12px 0;
+      /* font-family: 'Noto Serif CJK'; */
     `
     const PostCardExcerpt = styled.div`
       display: block;
@@ -54,6 +57,9 @@ const PostCard = ({ post }) => {
       font-weight: 400;
       margin-top: 5px;
       margin-bottom: 5px;
+      font-family: 'Noto Serif CJK';
+      font-weight: 300;
+      letter-spacing: -0.2px;
       @media screen and (max-width: 400px) {
           display: none;
       }
@@ -71,6 +77,8 @@ const PostCard = ({ post }) => {
         font-weight: 400;
         margin-top: 5px;
         margin-bottom: 5px;
+        font-family: 'Noto Serif CJK';
+        font-weight: 300;
       }
     `
 
@@ -89,7 +97,7 @@ const PostCard = ({ post }) => {
                         {post.featured && <span>Featured</span>}
                         <PostCardTitle>{post.title}</PostCardTitle>
                     </header>
-                    <PostCardExcerpt>{post.excerpt.substr(0, 250)}</PostCardExcerpt>
+                    <PostCardExcerpt>{post.excerpt.substr(0, 243)}</PostCardExcerpt>
                     <PostCardExcerptMobile>{post.excerpt.substr(0, 80)}</PostCardExcerptMobile>
 
                 </PostBox>

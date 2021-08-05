@@ -32,9 +32,9 @@ const Tag = ({ data, location, pageContext }) => {
                 type="series"
             />
             <Layout>
-                <div className="container">
+                <div className="post-container">
                     <header className="tag-header">
-                        <h1>Tag: {tag.name}</h1>
+                        <h1 style={{ margin: '100px 0 60px 0' }}>Tag: {tag.name}</h1>
                         {tag.description ? <p>{tag.description}</p> : null}
                     </header>
                     <Section>
