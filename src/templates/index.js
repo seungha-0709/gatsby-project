@@ -60,7 +60,7 @@ export default Index
 export const pageQuery = graphql`
   query GhostPostQuery($limit: Int!, $skip: Int!) {
     allGhostPost(
-        sort: { order: ASC, fields: [published_at] },
+        sort: { order: DESC, fields: [published_at] },
         limit: $limit,
         skip: $skip
     ) {
