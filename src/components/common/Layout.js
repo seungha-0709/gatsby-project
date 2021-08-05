@@ -175,6 +175,19 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
             <div className={classNames('viewport', isDark ? 'darkmode' : '')}>
 
+                <header className="site-head">
+                    <div className="toggle-button">
+                        <div className="toggle-bg">
+                            <div
+                                className={classNames('click', isToggleDark ? 'dark' : '')}
+                                onClick={handleToggleClick}
+                            ></div>
+                            <RiMoonFill style={{ color: '#fff', fontSize: '16px' }} />
+                            <HiOutlineSun style={{ color: '#fff', fontSize: '16px' }} />
+                        </div>
+                    </div>
+                </header>
+
                 <div className="viewport-top">
                     <div className="layout-wrap">
                         <aside className="lnb-wrap">
@@ -210,18 +223,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                 <Category />
                             </div>
                         </div> */}
-                        <Header>
-                            <div className="toggle-button">
-                                <div className="toggle-bg">
-                                    <div
-                                        className={classNames('click', isToggleDark ? 'dark' : '')}
-                                        onClick={handleToggleClick}
-                                    ></div>
-                                    <RiMoonFill style={{ color: '#fff', fontSize: '16px' }} />
-                                    <HiOutlineSun style={{ color: '#fff', fontSize: '16px' }} />
-                                </div>
-                            </div>
-                        </Header>
+
                         <ContentWrap>
                             {/* <header className="site-head">
                                 <div style={{ display: 'flex' }}>

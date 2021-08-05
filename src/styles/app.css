@@ -609,20 +609,26 @@ code {
 
 /* Header
 /* ---------------------------------------------------------- */
-
 .site-head {
-  width: 75%;
-  height: auto;
-  padding: 15px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  background: var(--color-bg);
-  position: fixed;
-  z-index: 1;
-  right: 0;
+  display: none;
 }
+
+@media screen and (max-width: 800px) {
+  .site-head {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background: var(--color-bg);
+    position: fixed;
+    z-index: 1;
+    right: 0;
+  }
+}
+
 
 /* Lnb navigation
 /* ---------------------------------------------------------- */
