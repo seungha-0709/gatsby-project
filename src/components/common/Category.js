@@ -10,6 +10,7 @@ const Category = () => {
     flex-wrap: wrap;
     flex-direction: flex-end;
     width: 120px;
+    font-family: 'Spoqa Han Sans';
   `
 
   const CategoryP = styled.p`
@@ -18,6 +19,7 @@ const Category = () => {
     font-size: 0.9rem;
     width: 100%;
     text-align: right;
+    font-family: 'Spoqa Han Sans';
   `
 
   const CategoryUl = styled.ul`
@@ -27,6 +29,7 @@ const Category = () => {
     margin: 0 0 10px 0;
     padding: 0;
     width: 100%;
+    font-family: 'Spoqa Han Sans';
   `
 
   const CategoryLi = styled.li`
@@ -42,6 +45,8 @@ const Category = () => {
     border-bottom: 1px dotted #13A4F2;
     letter-spacing: 2px;
     text-transform: uppercase;
+    font-family: 'Spoqa Han Sans';
+    font-weight: 400;
   `
 
   const data = useStaticQuery(graphql`
@@ -81,11 +86,11 @@ const Category = () => {
             <span>Home</span>
           </CategoryA>
         </CategoryLi>
-        {/* <CategoryLi>
+        <CategoryLi>
           <CategoryA href={'/about'} noopener noreferrer>
             <span>About</span>
           </CategoryA>
-        </CategoryLi> */}
+        </CategoryLi>
         {/* {pageList.map(v => (
           <CategoryLi>
             <CategoryA href={'/' + `${v.slug}`} noopener noreferrer>

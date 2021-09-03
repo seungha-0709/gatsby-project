@@ -92,7 +92,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
     useEffect(() => {
         hljs.highlightAll();
-    }, [])
+    })
 
 
     const Lnb = styled.div`
