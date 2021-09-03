@@ -1264,7 +1264,7 @@ code {
   }
   .darkmode blockquote {
     /* background: rgba(255, 255, 255, 0.1); */
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 4px solid rgba(255, 255, 255, 0.5);
   }
   .darkmode .post-tags-title a, 
   .darkmode .post-tags a,
