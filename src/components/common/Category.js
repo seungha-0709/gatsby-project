@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Link } from 'gatsby'
+import { FaInstagramSquare } from 'react-icons/fa'
 import styled from 'styled-components';
 
 const Category = () => {
@@ -109,6 +110,11 @@ const Category = () => {
           </CategoryLi>
         ))}
       </CategoryUl>
+      <div>
+        <a href="https://www.instagram.com/be_onanotherplanet/" noopener noreferrer target="_blank">
+          <FaInstagramSquare style={{ marginTop: '10px', color: '#0079bb', fontSize: '1.8rem' }} />
+        </a>
+      </div>
     </CategoryDiv>
   )
 }
