@@ -57,6 +57,7 @@ const Post = ({ data, location }) => {
       margin-bottom: 20px; 
       p {
         font-size: 0.8rem;
+        font-family: 'Spoqa Han Sans';
         margin: 8px;
         line-height: 1.4;
       }
@@ -66,6 +67,13 @@ const Post = ({ data, location }) => {
       @media screen and (max-width: 900px) {
           width: 100%;
       }
+    `
+
+    const PostSpan = styled.p`
+      font-family: 'Spoqa Han Sans';
+      color: #757575;
+      font-size: 0.8rem;
+      margin: 25px 0 0;
     `
 
     return (
@@ -85,10 +93,10 @@ const Post = ({ data, location }) => {
                             {post.tags && post.tags.map((tag, i) => { return <span key={i} className="post-tags-title">{tag.name + '. '}</span> })}
                             <h2 className="post-title">{post.title}</h2>
 
-                            <p className="post-date"><span>written by </span>
+                            <PostSpan><span>written by </span>
                                 <strong>{post.authors.map(v => { return v.name })}</strong>
-                            </p>
-                            <p className="post-date"><span>{moment(post.published_at).format('YYYY MMMM DD')}</span></p>
+                            </PostSpan>
+                            <PostSpan><span>{moment(post.published_at).format('YYYY MMMM DD')}</span></PostSpan>
                         </header>
 
                         <div className="post-content" ref={postEl}>
