@@ -154,6 +154,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
     const LnbFooter = styled.div`
        margin-top: 60px;
+       border: 0px;
      `
 
     return (

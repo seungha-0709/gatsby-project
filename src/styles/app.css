@@ -25,7 +25,7 @@ what's here to work the way you'd like it to.
     --color-primary: #0079bb;
     --color-base: #15171A;
     --color-secondary: #6d747a;
-    --color-border: #c7d5d8;
+    --color-border: #bcbfc1;
     --color-bg:#f8f8f8;
 
     /* Fonts */
@@ -425,7 +425,7 @@ dd {
 blockquote {
     margin: 40px 0px;
     padding: 0 1.6em 0 1.6em;
-    border-left: #a0b4c0 6px solid;
+    border-left: var(--color-border) 6px solid;
 }
 
 blockquote p {
@@ -1118,7 +1118,7 @@ code {
 
 .kg-bookmark-thumbnail {
     position: relative;
-    min-width: 33%;
+    min-width: 40%;
     max-height: 100%;
 }
 
@@ -1246,7 +1246,9 @@ code {
   .darkmode .index-box-wrapper a,
   .darkmode .site-foot-nav,
   .darkmode .site-foot-nav-item,
-  .darkmode .site-foot-nav-left {
+  .darkmode .site-foot-nav-left,
+  .pagination-location,
+  .pagination-link {
     color: #ffffff;
   }
   .darkmode menu-wrapper .menu a:hover,
@@ -1443,6 +1445,9 @@ code {
     }
     .post-content h1 {
       font-size: 1.2rem;
+    }
+    .kg-bookmark-thumbnail {
+      display: none;
     }
 }
 
