@@ -215,10 +215,10 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                             </div>
                                         </div>
                                     </div>
-                                    <Copyright>
+                                    {/* <Copyright>
                                         © 2021 <br /> Published with <br /> Ghost, Gatsby and Netlify
                                         <span style={{ display: 'block' }}>Designed by Seungha Kim</span>
-                                    </Copyright>
+                                    </Copyright> */}
                                 </LeftSide>
                             </Lnb>
                         </aside>

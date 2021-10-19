@@ -87,11 +87,6 @@ const Category = () => {
             <span>Home</span>
           </CategoryA>
         </CategoryLi>
-        <CategoryLi>
-          <CategoryA href={'/about'} noopener noreferrer>
-            <span>About</span>
-          </CategoryA>
-        </CategoryLi>
         {/* {pageList.map(v => (
           <CategoryLi>
             <CategoryA href={'/' + `${v.slug}`} noopener noreferrer>
@@ -110,11 +105,11 @@ const Category = () => {
           </CategoryLi>
         ))}
       </CategoryUl>
-      <div>
+      {/* <div>
         <a href="https://www.instagram.com/be_onanotherplanet/" noopener noreferrer target="_blank">
           <FaInstagramSquare style={{ marginTop: '10px', color: '#0079bb', fontSize: '1.8rem' }} />
         </a>
-      </div>
+      </div> */}
     </CategoryDiv>
   )
 }
