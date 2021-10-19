@@ -169,7 +169,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
                 <header className="site-head">
                     <div>
-                        <Menu customBurgerIcon={<GiHamburgerMenu style={{ fontSize: '24px' }} />} className={"hamburger"}>
+                        <Menu disableAutoFocus customBurgerIcon={<GiHamburgerMenu style={{ fontSize: '24px' }} />} className={"hamburger"}>
                             <Category />
                             <LnbFooter>
                                 <div className="toggle-button">
