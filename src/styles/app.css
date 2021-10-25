@@ -1247,8 +1247,8 @@ code {
   .darkmode .site-foot-nav,
   .darkmode .site-foot-nav-item,
   .darkmode .site-foot-nav-left,
-  .pagination-location,
-  .pagination-link {
+  .darkmode .pagination-location,
+  .darkmode .pagination-link {
     color: #ffffff;
   }
   .darkmode menu-wrapper .menu a:hover,
