@@ -26,6 +26,7 @@ const PostCard = ({ post }) => {
       text-align: right;
       @media screen and (max-width: 400px) {
           font-size: 0.6rem;
+          width: 40px;
       }
     `
   const PostBox = styled.div`
@@ -104,7 +105,7 @@ const PostCard = ({ post }) => {
           {moment(post.published_at).format('YYYY')}
         </Date>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', width: '12px' }}>
           <BiChevronDown />
           <div style={{ borderLeft: '1px solid #ddd', height: '100%' }}></div>
         </div>
