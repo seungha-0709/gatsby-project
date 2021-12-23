@@ -1,30 +1,46 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { FaCircle } from 'react-icons/fa'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
+import classNames from 'classnames'
 
 const Pagination = ({ pageContext }) => {
-    const { previousPagePath, nextPagePath, humanPageNumber, numberOfPages } = pageContext
+    const { previousPagePath, nextPagePath, humanPageNumber, pageNumber, numberOfPages } = pageContext
+
+    console.log(pageContext)
+
+    const LinkIcon = styled.div`
+      display: flex;
+      width: 30px;
+      height: 30px;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+          transition: 0.8s ease-out;
+          transform: translateY(-10px);
+      }
+    `
 
     return (
         <nav className="pagination" role="navigation">
-            <div className="pagination-location">Page {humanPageNumber} of {numberOfPages}</div>
-            <div className="pagination-box">
-                {previousPagePath ? (
-
-                    <Link to={previousPagePath} rel="prev">
-                        <span className="pagination-link">Prev</span>
-                    </Link>
-
-                ) : (<span className="pagination-nolink">Prev</span>)}
-
-                {nextPagePath ? (
-
-                    <Link to={nextPagePath} rel="next">
-                        <span className="pagination-link">Next</span>
-                    </Link>
-                ) : (
-                    <span className="pagination-nolink">Next</span>
-                )}
+            <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '40px' }}>
+                {Array.from({ length: numberOfPages }).map((num, index) => {
+                    if (index === 0) {
+                        return (
+                            <LinkIcon>
+                                <Link to="/">
+                                    <FaCircle color={index === pageNumber ? "#0079bb" : "#ddd"} size="12px" />
+                                </Link>
+                            </LinkIcon>)
+                    } else
+                        return (
+                            <LinkIcon>
+                                <Link to={`${'/page/' + (index + 1)}`}>
+                                    <FaCircle color={index === pageNumber ? "#0079bb" : "#ddd"} size="12px" /></Link>
+                            </LinkIcon>
+                        )
+                })}
             </div>
         </nav>
     )

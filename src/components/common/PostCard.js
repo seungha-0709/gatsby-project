@@ -4,6 +4,8 @@ import { Link } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
 import moment from 'moment';
 import styled from 'styled-components';
+import { RiArticleLine } from 'react-icons/ri'
+import { BiChevronDown } from 'react-icons/bi'
 import { isDarkShift, isToggle } from '../../store/dark'
 
 const PostCard = ({ post }) => {
@@ -16,8 +18,10 @@ const PostCard = ({ post }) => {
       margin: 20px 0;
     `
   const Date = styled.div`
-      width: 25%;
+      width: 100px;
       margin-right: 20px;
+      padding-top: 20px;
+      box-sizing: border-box;
       font-size: 0.8rem;
       text-align: right;
       @media screen and (max-width: 400px) {
@@ -25,10 +29,10 @@ const PostCard = ({ post }) => {
       }
     `
   const PostBox = styled.div`
-      width: 75%;
+      width: calc(100% - 100px);
       padding-left: 20px;
       padding-bottom: 40px;
-      border-left: 1px solid #ddd;
+      /* border-left: 1px solid #ddd; */
     `
 
   const PostCardTags = styled.div`
@@ -38,6 +42,8 @@ const PostCard = ({ post }) => {
       color: #0079bb;
       font-weight: 600;
       padding: 0;
+      padding-top: 20px;
+      box-sizing: border-box;
       margin: 0;
       font-weight: 300;
       @media screen and (max-width: 400px) {
@@ -94,8 +100,14 @@ const PostCard = ({ post }) => {
       <Container>
 
         <Date>
-          {moment(post.published_at).format('MMMM.DD YYYY')}
+          {moment(post.published_at).format('MMM.DD')}<br />
+          {moment(post.published_at).format('YYYY')}
         </Date>
+
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <BiChevronDown />
+          <div style={{ borderLeft: '1px solid #ddd', height: '100%' }}></div>
+        </div>
 
         <PostBox>
           <header className="post-card-header">

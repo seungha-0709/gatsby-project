@@ -16,41 +16,41 @@ import styled from 'styled-components';
 */
 const Index = ({ data, location, pageContext }) => {
 
-    const Section = styled.section`
-      width: 900px;
+  const Section = styled.section`
+      /* width: 900px; */
       @media (max-width: 1200px) {
         width: 100%;
       }
     `
 
-    const posts = data.allGhostPost.edges
+  const posts = data.allGhostPost.edges
 
-    return (
-        <>
-            <MetaData location={location} />
-            <Layout isHome={true}>
-                <div className="post-container">
-                    <Section>
-                        {posts.map(({ node }) => (
-                            // The tag below includes the markup for each post - components/common/PostCard.js
-                            <PostCard key={node.id} post={node} />
-                        ))}
-                    </Section>
-                    <Pagination pageContext={pageContext} />
-                </div>
-            </Layout>
-        </>
-    )
+  return (
+    <>
+      <MetaData location={location} />
+      <Layout isHome={true}>
+        <div className="post-container">
+          <Section>
+            {posts.map(({ node }) => (
+              // The tag below includes the markup for each post - components/common/PostCard.js
+              <PostCard key={node.id} post={node} />
+            ))}
+          </Section>
+          <Pagination pageContext={pageContext} />
+        </div>
+      </Layout>
+    </>
+  )
 }
 
 Index.propTypes = {
-    data: PropTypes.shape({
-        allGhostPost: PropTypes.object.isRequired,
-    }).isRequired,
-    location: PropTypes.shape({
-        pathname: PropTypes.string.isRequired,
-    }).isRequired,
-    pageContext: PropTypes.object,
+  data: PropTypes.shape({
+    allGhostPost: PropTypes.object.isRequired,
+  }).isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+  pageContext: PropTypes.object,
 }
 
 export default Index

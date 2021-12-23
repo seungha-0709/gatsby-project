@@ -53,42 +53,6 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
         setIsMenuOpen(!isMenuOpen)
     }, [isMenuOpen])
 
-    // const [windowWidth, setWindowWidth] = useState(null)
-    // const handleResize = () => {
-    //     setWindowWidth(window.innerWidth)
-    // }
-
-    // useEffect(() => {
-    //     setWindowWidth(window.innerWidth)
-    //     window.addEventListener('resize', handleResize);
-    //     return () => { // cleanup 
-    //         window.removeEventListener('resize', handleResize);
-    //     }
-    // }, []);
-
-    // const lnbBox = useRef(null)
-    // const lnbNav = useRef(null)
-
-    // useEffect(() => {
-    //     lnbNav.current.style.display = 'flex'
-    //     if (windowWidth < 400) {
-    //         lnbNav.current.style.width = '100px'
-    //         lnbNav.current.style.left = '-100px'
-    //         if (isMenuOpen) {
-    //             lnbNav.current.style.width = windowWidth / 1.2 + 'px'
-    //         } else {
-    //             lnbNav.current.style.width = '100px'
-    //         }
-    //     } else {
-    //         lnbNav.current.style.left = '-10%'
-    //         lnbNav.current.style.width = '0px'
-    //         if (isMenuOpen) {
-    //             lnbNav.current.style.width = windowWidth / 2.5 + 'px'
-    //         } else {
-    //             lnbNav.current.style.width = '0px'
-    //         }
-    //     }
-    // }, [isMenuOpen, windowWidth])
 
     useEffect(() => {
         hljs.highlightAll();
@@ -96,11 +60,11 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
 
     const Lnb = styled.div`
-      position: fixed;
-      top: 0;
-      left: 0;
+      /* position: fixed; */
+      /* top: 0; */
+      /* left: 0; */
       z-index: 10;
-      width: 400px;
+      width: 300px;
       height: 100vh; 
       .darkmode {
         background-color: #212121;
@@ -138,14 +102,14 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
         font-size: 0.4rem;
     `
     const ContentWrap = styled.div`
-        margin-left: 400px;
+        /* margin-left: 400px; */
         width: 100%;
         @media screen and (max-width: 1500px) {
-          margin-left: 300px;
+          /* margin-left: 300px; */
           padding: 0 40px;
           width: calc(100% - 300px);
       }
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 1100px) {
             margin: 40px 0 0 0;
             width: 100%;
             padding: 20px;
@@ -198,12 +162,12 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         <aside className="lnb-wrap">
                             <Lnb>
                                 <LeftSide>
-                                    <SquareLogo>
+                                    {/* <SquareLogo>
                                         MY<br />
                                         JOURNAL
-                                    </SquareLogo>
+                                    </SquareLogo> */}
                                     <Category />
-                                    <div style={{ marginTop: '80px' }}>
+                                    <div style={{ marginTop: '200px' }}>
                                         <div className="toggle-button">
                                             <div className="toggle-bg">
                                                 <div
@@ -215,19 +179,13 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                             </div>
                                         </div>
                                     </div>
-                                    {/* <Copyright>
+                                    <Copyright>
                                         © 2021 <br /> Published with <br /> Ghost, Gatsby and Netlify
                                         <span style={{ display: 'block' }}>Designed by Seungha Kim</span>
-                                    </Copyright> */}
+                                    </Copyright>
                                 </LeftSide>
                             </Lnb>
                         </aside>
-                        {/* <div ref={lnbNav} className={classNames('lnb-nav')} style={{ display: 'none' }}>
-                            <span style={{ cursor: 'pointer' }}><FiChevronsLeft onClick={handleMenuOpen} style={{ color: '#fff', fontSize: '30px' }} /></span>
-                            <div className="site-lnb-nav">
-                                <Category />
-                            </div>
-                        </div> */}
 
                         <ContentWrap>
                             <main className="site-main">

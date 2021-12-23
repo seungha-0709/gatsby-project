@@ -95,7 +95,7 @@ const Category = () => {
           </CategoryLi>
         ))} */}
       </CategoryUl>
-      <CategoryUl>
+      {/* <CategoryUl>
         {tagList.map(v => (
           <CategoryLi key={v.id}>
             <CategoryA href={'/tag/' + `${v.slug}`} noreferrer noopener>
@@ -104,7 +104,7 @@ const Category = () => {
             </CategoryA>
           </CategoryLi>
         ))}
-      </CategoryUl>
+      </CategoryUl> */}
       {/* <div>
         <a href="https://www.instagram.com/be_onanotherplanet/" noopener noreferrer target="_blank">
           <FaInstagramSquare style={{ marginTop: '10px', color: '#0079bb', fontSize: '1.8rem' }} />
