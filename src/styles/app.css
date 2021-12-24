@@ -1220,6 +1220,10 @@ code {
     background: #212121;
     color: #ffffff
   }
+.darkmode .lnb-wrap {
+  background: #212121;
+    color: #ffffff
+}
   .darkmode .site-foot {
     background: #212121;
   }
