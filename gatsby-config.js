@@ -5,6 +5,10 @@ const generateRSSFeed = require(`./src/utils/rss/generate-feed`)
 
 let ghostConfig
 
+const express = require(`express`);
+const app = express();
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
 try {
     ghostConfig = require(`./.ghost`)
 } catch (e) {
@@ -36,6 +40,17 @@ if (process.env.NODE_ENV === `production` && config.siteUrl === `https://kimseun
 module.exports = {
     siteMetadata: {
         siteUrl: process.env.SITEURL || config.siteUrl,
+    },
+    // Enables the use of function URLs locally
+
+    developMiddleware: app => {
+        app.use(
+            "/.netlify/functions/",
+            createProxyMiddleware({
+                target: "http://localhost:9000",
+                pathRewrite: { "/.netlify/functions/": "" },
+            })
+        )
     },
     plugins: [
         /**

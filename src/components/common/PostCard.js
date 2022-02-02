@@ -9,6 +9,9 @@ import { BiChevronDown } from 'react-icons/bi'
 import { isDarkShift, isToggle } from '../../store/dark'
 
 const PostCard = ({ post }) => {
+
+  console.log("post", post)
+
   const url = `/${post.slug}/`
 
   const Container = styled.div`
@@ -127,23 +130,23 @@ const PostCard = ({ post }) => {
   )
 }
 
-PostCard.propTypes = {
-  post: PropTypes.shape({
-    slug: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    feature_image: PropTypes.string,
-    featured: PropTypes.bool,
-    tags: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string,
-      })
-    ),
-    excerpt: PropTypes.string.isRequired,
-    primary_author: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      profile_image: PropTypes.string,
-    }).isRequired,
-  }).isRequired,
-}
+// PostCard.propTypes = {
+//   post: PropTypes.shape({
+//     slug: PropTypes.string.isRequired,
+//     title: PropTypes.string.isRequired,
+//     // feature_image: PropTypes.string,
+//     featured: PropTypes.bool,
+//     tags: PropTypes.arrayOf(
+//       PropTypes.shape({
+//         name: PropTypes.string,
+//       })
+//     ),
+//     excerpt: PropTypes.string.isRequired,
+//     primary_author: PropTypes.shape({
+//       name: PropTypes.string.isRequired,
+//       profile_image: PropTypes.string,
+//     }).isRequired,
+//   }).isRequired,
+// }
 
 export default PostCard

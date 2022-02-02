@@ -1,6 +1,10 @@
 [build]
   command = "NODE_ENV=production gatsby build"
   publish = "public/"
+  Functions = "functions"
 
 [template]
   incoming-hooks = ["Ghost"]
+
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"

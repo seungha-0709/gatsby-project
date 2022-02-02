@@ -70,7 +70,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
         background-color: #212121;
       }
       @media screen and (max-width: 1500px) {
-          width: 300px;
+          width: 250px;
       }
       @media screen and (max-width: 800px) {
           display: none;
@@ -79,8 +79,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
     const LeftSide = styled.div`
         width: 100%;
-        padding-top: 150px;
-        padding-left: 100px;
+        padding-top: 120px;
+        /* padding-left: 100px; */
         @media screen and (max-width: 1200px) {
           padding-left: 60px;
       }

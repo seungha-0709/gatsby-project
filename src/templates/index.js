@@ -51,7 +51,6 @@ const Index = ({ data, location, pageContext }) => {
       <Layout isHome={true}>
         <div className="post-container">
           <Section>
-            {loading && }
             {/* <InfiniteScroll
               dataLength={content.length}
               hasMore={true}
