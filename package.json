@@ -66,6 +66,7 @@
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "netlify-lambda": "^2.0.15",
+    "netlify-plugin-gatsby-cache": "^0.3.2",
     "npm": "^7.22.0",
     "react": "17.0.1",
     "react-burger-menu": "^3.0.6",
