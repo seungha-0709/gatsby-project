@@ -134,6 +134,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <header className="site-head">
                     <div>
                         <Menu disableAutoFocus customBurgerIcon={<GiHamburgerMenu style={{ fontSize: '24px' }} />} className={"hamburger"}>
+                            <img src="/images/main.png" width="100" alt="Seungha's Journal" style={{ marginLeft: '-10px', marginBottom: '30px', display: 'inline-block' }} />
                             <Category />
                             <LnbFooter>
                                 <div className="toggle-button">
@@ -162,10 +163,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         <aside className="lnb-wrap">
                             <Lnb>
                                 <LeftSide>
-                                    {/* <SquareLogo>
-                                        MY<br />
-                                        JOURNAL
-                                    </SquareLogo> */}
+                                    <img src="/images/main.png" width="100" alt="Seungha's Journal" style={{ marginLeft: '-10px', marginBottom: '30px', display: 'inline-block' }} />
                                     <Category />
                                     <div style={{ marginTop: '200px' }}>
                                         <div className="toggle-button">
