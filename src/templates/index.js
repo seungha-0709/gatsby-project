@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import axios from 'axios'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -16,6 +18,24 @@ import styled from 'styled-components';
 */
 const Index = ({ data, location, pageContext }) => {
 
+  const posts = data.allGhostPost.edges
+
+  const [content, setContent] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  const fetchPosts = () => {
+    axios("/.netlify/functions/fetch").then(res => {
+      const { posts } = res.data.data
+      setContent([...res.data.data.posts])
+      setLoading(false)
+    })
+  }
+
+  useEffect(() => {
+    fetchPosts()
+  }, [])
+
+
   const Section = styled.section`
       /* width: 900px; */
       @media (max-width: 1200px) {
@@ -23,7 +43,7 @@ const Index = ({ data, location, pageContext }) => {
       }
     `
 
-  const posts = data.allGhostPost.edges
+
 
   return (
     <>
@@ -31,12 +51,22 @@ const Index = ({ data, location, pageContext }) => {
       <Layout isHome={true}>
         <div className="post-container">
           <Section>
-            {posts.map(({ node }) => (
+            {loading && }
+            {/* <InfiniteScroll
+              dataLength={content.length}
+              hasMore={true}
+              next={() => fetchPosts()}
+              loader={
+                <p>Loading...</p>
+              }
+            > */}
+            {!loading && content.map((node) => (
               // The tag below includes the markup for each post - components/common/PostCard.js
               <PostCard key={node.id} post={node} />
             ))}
+            {/* </InfiniteScroll> */}
           </Section>
-          <Pagination pageContext={pageContext} />
+          {/* <Pagination pageContext={pageContext} /> */}
         </div>
       </Layout>
     </>
