@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import axios from 'axios'
 import InfiniteScroll from 'react-infinite-scroll-component'
-
+import { TailSpin } from 'react-loading-icons'
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
 import styled from 'styled-components';
@@ -43,14 +43,13 @@ const Index = ({ data, location, pageContext }) => {
       }
     `
 
-
-
   return (
     <>
       <MetaData location={location} />
       <Layout isHome={true}>
         <div className="post-container">
           <Section>
+            {loading && <TailSpin stroke="#13A4F2" strokeWidth={4} width={20} />}
             {/* <InfiniteScroll
               dataLength={content.length}
               hasMore={true}

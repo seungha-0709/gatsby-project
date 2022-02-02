@@ -75,6 +75,7 @@
     "react-highlight": "^0.14.0",
     "react-icons": "^4.2.0",
     "react-infinite-scroll-component": "^6.1.0",
+    "react-loading-icons": "^1.0.8",
     "recoil": "^0.2.0",
     "styled-components": "^5.2.3"
   }
