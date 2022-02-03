@@ -79,8 +79,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
     const LeftSide = styled.div`
         width: 100%;
-        padding-top: 120px;
-        /* padding-left: 100px; */
+        padding-top: 100px;
+        padding-left: 40px;
         @media screen and (max-width: 1200px) {
           padding-left: 60px;
       }

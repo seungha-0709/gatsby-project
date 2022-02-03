@@ -7,6 +7,7 @@ import { TailSpin } from 'react-loading-icons'
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
 import styled from 'styled-components';
+import { next } from 'cheerio/lib/api/traversing'
 
 /**
 * Main index page (home page)
@@ -22,12 +23,26 @@ const Index = ({ data, location, pageContext }) => {
 
   const [content, setContent] = useState([])
   const [loading, setLoading] = useState(true)
+  const [hasMore, setHasMore] = useState(true)
 
   const fetchPosts = () => {
     axios("/.netlify/functions/fetch").then(res => {
-      const { posts } = res.data.data
-      setContent([...res.data.data.posts])
-      setLoading(false)
+      console.log(res)
+      const { posts } = res.data
+      const postIds = posts.map(item => item.id)
+      let contentIds
+      if (content.length === 0) {
+        setContent(posts.splice(0, 5))
+        setLoading(false)
+      } else {
+        contentIds = content.map(item => item.id)
+        const loadedPostsIds = postIds.filter(id => !contentIds.includes(id))
+        const loadedPosts = posts.filter(item => loadedPostsIds.includes(item.id))
+
+        setContent([...content, ...loadedPosts.splice(0, 5)])
+        setLoading(false)
+        if (loadedPosts.length === 0) setHasMore(false)
+      }
     })
   }
 
@@ -43,26 +58,32 @@ const Index = ({ data, location, pageContext }) => {
       }
     `
 
+  const next = param => {
+    console.log("param", param)
+  }
+
   return (
     <>
       <MetaData location={location} />
       <Layout isHome={true}>
         <div className="post-container">
           <Section>
-            {loading && <TailSpin stroke="#13A4F2" strokeWidth={4} width={20} />}
-            {/* <InfiniteScroll
-              dataLength={content.length}
-              hasMore={true}
+            {/* {loading && <TailSpin stroke="#13A4F2" strokeWidth={4} width={20} />} */}
+            <InfiniteScroll
+              dataLength={5}
+              hasMore={hasMore}
               next={() => fetchPosts()}
               loader={
-                <p>Loading...</p>
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                  <TailSpin stroke="#13A4F2" strokeWidth={4} width={25} />
+                </div>
               }
-            > */}
-            {!loading && content.map((node) => (
-              // The tag below includes the markup for each post - components/common/PostCard.js
-              <PostCard key={node.id} post={node} />
-            ))}
-            {/* </InfiniteScroll> */}
+            >
+              {!loading && content.map((node) => (
+                // The tag below includes the markup for each post - components/common/PostCard.js
+                <PostCard key={node.id} post={node} />
+              ))}
+            </InfiniteScroll>
           </Section>
           {/* <Pagination pageContext={pageContext} /> */}
         </div>

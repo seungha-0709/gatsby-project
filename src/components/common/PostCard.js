@@ -9,9 +9,6 @@ import { BiChevronDown } from 'react-icons/bi'
 import { isDarkShift, isToggle } from '../../store/dark'
 
 const PostCard = ({ post }) => {
-
-  console.log("post", post)
-
   const url = `/${post.slug}/`
 
   const Container = styled.div`
