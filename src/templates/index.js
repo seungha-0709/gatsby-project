@@ -32,7 +32,7 @@ const Index = ({ data, location, pageContext }) => {
       const postIds = posts.map(item => item.id)
       let contentIds
       if (content.length === 0) {
-        setContent(posts.splice(0, 5))
+        setContent(posts.splice(0, 8))
         setLoading(false)
       } else {
         contentIds = content.map(item => item.id)
