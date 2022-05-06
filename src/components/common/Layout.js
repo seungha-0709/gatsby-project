@@ -133,6 +133,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
       & > div {
         background: #222;
         width: 300px;
@@ -141,7 +142,10 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
         justify-content: center;
         align-items: center;
         color: #fff;
-        font-family: Averta Std PE;
+        p {
+          font-family: Averta Std PE;
+          text-align: center;
+        }
       }
     `
 
@@ -230,7 +234,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 </div>
             </div >
             <Background>
-                <div>This blog is closed.</div>
+                <div><p>This blog is closed.<br />
+                    <Link href="https://profile-ten-jet.vercel.app/portfolio" passhref>About Me?</Link></p>
+                </div>
             </Background>
         </>
     )
