@@ -235,7 +235,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             </div >
             <Background>
                 <div><p>This blog is closed.<br />
-                    <Link href="https://profile-ten-jet.vercel.app/portfolio" passhref>About Me?</Link></p>
+                    <Link href="https://kimseungha.com" passhref>About Me?</Link></p>
                 </div>
             </Background>
         </>
