@@ -17,6 +17,9 @@ import { next } from 'cheerio/lib/api/traversing'
 * in /utils/siteConfig.js under `postsPerPage`.
 *
 */
+
+
+
 const Index = ({ data, location, pageContext }) => {
 
   const posts = data.allGhostPost.edges

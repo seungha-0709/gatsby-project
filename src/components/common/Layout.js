@@ -24,6 +24,7 @@ import config from '../../utils/siteConfig'
 // Styles
 import '../../styles/app.css'
 import '../../styles/fonts.css'
+import axios from 'axios'
 
 /**
 * Main layout component
@@ -121,6 +122,33 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
        border: 0px;
      `
 
+    const Background = styled.div`
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(17, 17, 17, 1);
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > div {
+        background: #222;
+        width: 300px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-family: Averta Std PE;
+      }
+    `
+
+    useEffect(() => {
+
+    })
+
     return (
         <>
             <Helmet>
@@ -201,7 +229,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
                 </div>
             </div >
-
+            <Background>
+                <div>This blog is closed.</div>
+            </Background>
         </>
     )
 }

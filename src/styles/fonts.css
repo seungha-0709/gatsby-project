@@ -3,9 +3,9 @@
   font-weight: 700;
   font-display: block;
   src: local('Spoqa Han Sans Bold'),
-  url('/fonts/spoqahansansbold.woff2') format('woff2'),
-  url('/fonts/spoqahansansbold.woff') format('woff'),
-  url('/fonts/spoqahansansbold.ttf') format('truetype');
+    url('/fonts/spoqahansansbold.woff2') format('woff2'),
+    url('/fonts/spoqahansansbold.woff') format('woff'),
+    url('/fonts/spoqahansansbold.ttf') format('truetype');
 }
 
 @font-face {
@@ -13,9 +13,9 @@
   font-weight: 400;
   font-display: block;
   src: local('Spoqa Han Sans Regular'),
-  url('/fonts/spoqahansansregular.woff2') format('woff2'),
-  url('/fonts/spoqahansansregular.woff') format('woff'),
-  url('/fonts/spoqahansansregular.ttf') format('truetype');
+    url('/fonts/spoqahansansregular.woff2') format('woff2'),
+    url('/fonts/spoqahansansregular.woff') format('woff'),
+    url('/fonts/spoqahansansregular.ttf') format('truetype');
 }
 
 @font-face {
@@ -23,9 +23,9 @@
   font-weight: 300;
   font-display: block;
   src: local('Spoqa Han Sans Light'),
-  url('/fonts/spoqahansanslight.woff2') format('woff2'),
-  url('/fonts/spoqahansanslight.woff') format('woff'),
-  url('/fonts/spoqahansanslight.ttf') format('truetype');
+    url('/fonts/spoqahansanslight.woff2') format('woff2'),
+    url('/fonts/spoqahansanslight.woff') format('woff'),
+    url('/fonts/spoqahansanslight.ttf') format('truetype');
 }
 
 @font-face {
@@ -33,9 +33,9 @@
   font-weight: 100;
   font-display: block;
   src: local('Spoqa Han Sans Thin'),
-  url('/fonts/spoqahansansthin.woff2') format('woff2'),
-  url('/fonts/spoqahansansthin.woff') format('woff'),
-  url('/fonts/spoqahansansthin.ttf') format('truetype');
+    url('/fonts/spoqahansansthin.woff2') format('woff2'),
+    url('/fonts/spoqahansansthin.woff') format('woff'),
+    url('/fonts/spoqahansansthin.ttf') format('truetype');
 }
 
 @font-face {
@@ -51,7 +51,7 @@
   font-weight: 100;
   font-display: block;
   src: url('/fonts/NotoSerifKR-ExtraLight.woff2') format('woff2'),
-  url('/fonts/NotoSerifKR-ExtraLight.woff') format('woff');
+    url('/fonts/NotoSerifKR-ExtraLight.woff') format('woff');
 }
 
 @font-face {
@@ -59,7 +59,7 @@
   font-weight: 300;
   font-display: block;
   src: url('/fonts/NotoSerifKR-Regular.woff2') format('woff2'),
-  url('/fonts/NotoSerifKR-Regular.woff') format('woff');
+    url('/fonts/NotoSerifKR-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -67,5 +67,12 @@
   font-weight: 400;
   font-display: block;
   src: url('/fonts/NotoSerifKR-Medium.woff2') format('woff2'),
-  url('/fonts/NotoSerifKR-Medium.woff') format('woff');
+    url('/fonts/NotoSerifKR-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Averta Std PE';
+  font-weight: 400;
+  font-display: block;
+  src: url('/fonts/AvertaStdPE-Regular.otf') format('opentype');
 }
